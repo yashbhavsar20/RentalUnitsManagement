@@ -7,15 +7,20 @@ import Model.Property.ConcreteProperty.House;
 
 public class PropertyFactory {
 	
-	public Property getPropertyType(String propertyType) {
+	public Property addProperty(String propertyType,int streetNumber, String streetName, String cityName,
+								String postalCode, String civicAddress, int apartmentNumber, int numberOfBedRooms,
+								int numberOfBathRooms, double squareFoot) {
 		if (propertyType.equals("APARTMENT")) {
-			return new Apartment();
+			return new Apartment(streetNumber, streetName, cityName,
+					postalCode,civicAddress,apartmentNumber, numberOfBedRooms,
+			numberOfBathRooms, squareFoot);
+
 		}
 		else if (propertyType.equals("CONDO")) {
-			return new Condo(); 
+			return null;
 		}
 		else if(propertyType.equals("HOUSE")) {
-			return new House();
+			return null;
 		}
 		else {
 			return null;

@@ -1,23 +1,24 @@
 package Interface;
 
 public interface RentalSystemInterface {
+		void addProperty(String type,int streetNumber, String streetName, String cityName,
+						 String postalCode, String civicAddress, int apartmentNumber, int numberOfBedRooms,
+						 int numberOfBathRooms, double squareFoot);
+
+		void addTenant(String tenantName);
 		
-		public void addProperty(String type);
+		void rentUnit();
 		
-		public void addTenant(String tenantName);
+		String displayProperty();
 		
-		public void rentUnit();
+		void displayTenant();
 		
-		public void displayProperty();
+		void displayRentedUnit();
 		
-		public void displayTenant();
+		void displayVacantUnit();
 		
-		public void displayRentedUnit();
+		void displayLeases();
 		
-		public void displayVacantUnit();
-		
-		public void displayLeases();
-		
-		public void displayRentPaidStatus();
+		void displayRentPaidStatus();
 		
 }
