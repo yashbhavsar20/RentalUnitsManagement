@@ -2,6 +2,3 @@ bin/
 out/
 .idea
 .settings
-.classpath
-.project
-RentalSystem.iml
