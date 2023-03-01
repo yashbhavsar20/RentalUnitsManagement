@@ -2,6 +2,7 @@ package model.property.concrete_property;
 
 import model.address.Address;
 import model.property.Property;
+import model.property.property_details.PropertyDetails;
 
 import java.util.HashMap;
 
