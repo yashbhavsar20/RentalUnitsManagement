@@ -6,16 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ffb0eff2-357d-466d-b0ab-5e8a822bcbab" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/RentalSystemInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rental_interface/RentalSystemInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Factory/PropertyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/factory/PropertyFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Property/ConcreteProperty/Apartment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/property/concrete_property/Apartment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Property/ConcreteProperty/ApartmentBuilding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/property/concrete_property/ApartmentBuilding.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Property/ConcreteProperty/Condo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/property/concrete_property/Condo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Property/ConcreteProperty/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/property/concrete_property/House.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Property/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/property/Property.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Tenant/Tenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/tenant/Tenant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/RentalServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/RentalServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/RentalSystemScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/RentalSystemScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/property/property_details/PropertyDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/property/property_details/PropertyDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/tenant/Tenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/tenant/Tenant.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +58,7 @@
       <workItem from="1677628705753" duration="627000" />
       <workItem from="1677671904137" duration="4518000" />
       <workItem from="1677682126527" duration="15122000" />
-      <workItem from="1677699565472" duration="2490000" />
+      <workItem from="1677699565472" duration="4418000" />
     </task>
     <servers />
   </component>

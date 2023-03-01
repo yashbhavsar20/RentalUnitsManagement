@@ -12,7 +12,7 @@ public class PropertyDetails {
     Lease lease;
     ArrayList<Tenant> subscribersList=new ArrayList<>();
 
-    public PropertyDetaills(double squareFoot, int numberOfBedRooms, int numberOfBathRooms, boolean isOccupied, Lease lease) {
+    public PropertyDetails(double squareFoot, int numberOfBedRooms, int numberOfBathRooms, boolean isOccupied, Lease lease) {
         this.squareFoot = squareFoot;
         this.numberOfBedRooms = numberOfBedRooms;
         this.numberOfBathRooms = numberOfBathRooms;
