@@ -5,8 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ffb0eff2-357d-466d-b0ab-5e8a822bcbab" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/bin/Interface/RentalSystemInterface.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Model/Factory/PropertyFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Model/Property/ConcreteProperty/Apartment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Model/Property/ConcreteProperty/Condo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Model/Property/ConcreteProperty/House.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Model/Property/Property.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/View/MainMenu.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/View/RentalSystemScreen.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/module-info.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/RentalSystem/Model/Tenant/Tenant.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RentalSystem/Interface/RentalSystemInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalSystem/Interface/RentalSystemInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RentalSystem/Model/Factory/PropertyFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalSystem/Model/Factory/PropertyFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RentalSystem/Model/Property/ConcreteProperty/Apartment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RentalSystem/Model/Property/ConcreteProperty/Apartment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RentalSystem/Service/PropertyAddService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RentalSystem/View/MainMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RentalSystem/View/RentalSystemScreen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/MainMenu.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,11 +71,23 @@
       <updated>1677549453695</updated>
       <workItem from="1677549455045" duration="5442000" />
       <workItem from="1677554968471" duration="9000" />
-      <workItem from="1677628705753" duration="97000" />
+      <workItem from="1677628705753" duration="627000" />
+      <workItem from="1677671904137" duration="451000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
