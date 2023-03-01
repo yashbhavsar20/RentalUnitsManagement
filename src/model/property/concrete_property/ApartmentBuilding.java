@@ -10,6 +10,10 @@ public class ApartmentBuilding extends Property {
     private String civicAddress;
     private HashMap<Integer, PropertyDetails> apartments = new HashMap<Integer, PropertyDetails>();
 
+    public ApartmentBuilding(Address address, String civicAddress) {
+        this.address = address;
+        this.civicAddress = civicAddress;
+    }
     public Address getAddress() {
         return address;
     }
@@ -32,6 +36,19 @@ public class ApartmentBuilding extends Property {
 
     public void setApartments(HashMap<Integer, PropertyDetails> apartments) {
         this.apartments = apartments;
+    }
+
+    @Override
+    public String toString() {
+        return "ApartmentBuilding{" +
+                "address=" + address +
+                ", civicAddress='" + civicAddress + '\'' +
+                ", apartments=" + apartments +
+                ", streetNumber=" + streetNumber +
+                ", streetName='" + streetName + '\'' +
+                ", cityName='" + cityName + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                '}';
     }
 
     @Override
