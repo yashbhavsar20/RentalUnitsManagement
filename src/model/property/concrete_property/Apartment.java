@@ -3,7 +3,7 @@ package model.property.concrete_property;
 import model.property.Property;
 
 public class Apartment extends Property{
-	private String propertyType="APARTMENT";
+
 	private String civicAddress;
 	private int apartmentNumber;
 	private int numberOfBedRooms;

@@ -6,14 +6,27 @@ import model.property.Property;
 import java.util.HashMap;
 
 public class ApartmentBuilding extends Property {
+    private String propertyType="APARTMENT";
     private Address address;
     private String civicAddress;
     private HashMap<Integer, PropertyDetails> apartments = new HashMap<Integer, PropertyDetails>();
 
-    public ApartmentBuilding(Address address, String civicAddress) {
+    public ApartmentBuilding(String propertyType, Address address, String civicAddress, HashMap<Integer, PropertyDetails> apartments) {
+        this.propertyType = propertyType;
         this.address = address;
         this.civicAddress = civicAddress;
+        this.apartments = apartments;
     }
+
+
+    public String getPropertyType() {
+        return propertyType;
+    }
+
+    public void setPropertyType(String propertyType) {
+        this.propertyType = propertyType;
+    }
+
     public Address getAddress() {
         return address;
     }
@@ -38,10 +51,12 @@ public class ApartmentBuilding extends Property {
         this.apartments = apartments;
     }
 
+
     @Override
     public String toString() {
         return "ApartmentBuilding{" +
-                "address=" + address +
+                "propertyType='" + propertyType + '\'' +
+                ", address=" + address +
                 ", civicAddress='" + civicAddress + '\'' +
                 ", apartments=" + apartments +
                 ", streetNumber=" + streetNumber +
