@@ -3,6 +3,7 @@ package Model.Property.ConcreteProperty;
 import Model.Property.Property;
 
 public class Apartment extends Property{
+	private String propertyType="APARTMENT";
 	private String civicAddress;
 	private int apartmentNumber;
 	private int numberOfBedRooms;
@@ -51,6 +52,10 @@ public class Apartment extends Property{
 		return numberOfBathRooms;
 	}
 
+	public String getPropertyType() {
+		return propertyType;
+	}
+
 	public void setNumberOfBathRooms(int numberOfBathRooms) {
 		this.numberOfBathRooms = numberOfBathRooms;
 	}
@@ -72,7 +77,8 @@ public class Apartment extends Property{
 	@Override
 	public String toString() {
 		return "Apartment{" +
-				"civicAddress='" + civicAddress + '\'' +
+				"propertyType='" + propertyType + '\'' +
+				", civicAddress='" + civicAddress + '\'' +
 				", apartmentNumber=" + apartmentNumber +
 				", numberOfBedRooms=" + numberOfBedRooms +
 				", numberOfBathRooms=" + numberOfBathRooms +

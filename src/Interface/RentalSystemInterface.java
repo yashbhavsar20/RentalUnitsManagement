@@ -3,6 +3,8 @@ package Interface;
 import Model.Property.Property;
 import Model.Tenant.Tenant;
 
+import java.util.ArrayList;
+
 public interface RentalSystemInterface {
 		void addProperty(String type,int streetNumber, String streetName, String cityName,
 						 String postalCode, String civicAddress, int apartmentNumber, int numberOfBedRooms,
@@ -12,7 +14,7 @@ public interface RentalSystemInterface {
 		
 		void rentUnit(Property property, Tenant tenant);
 		
-		String displayProperty();
+		ArrayList<Property> displayProperty();
 		
 		void displayTenant();
 		

@@ -26,13 +26,9 @@ public class RentalServices implements RentalSystemInterface {
 
     }
 
-    public String displayProperty(){
-            String result="";
+    public ArrayList<Property> displayProperty(){
             //Need to rethink whether to return string or ArrayList
-            for (Property property:propertyList){
-                result=result+"\n###\n"+property.toString();
-            }
-            return result;
+            return propertyList;
     }
 
     public void displayTenant(){
