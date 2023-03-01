@@ -1,9 +1,9 @@
-package Service;
+package service;
 
-import Interface.RentalSystemInterface;
-import Model.Factory.PropertyFactory;
-import Model.Property.Property;
-import Model.Tenant.Tenant;
+import rental_interface.RentalSystemInterface;
+import model.factory.PropertyFactory;
+import model.property.Property;
+import model.tenant.Tenant;
 
 import java.util.ArrayList;
 

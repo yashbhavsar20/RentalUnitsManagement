@@ -1,4 +1,4 @@
-package Model.Property;
+package model.property;
 
 public abstract class Property {
 	protected int streetNumber;

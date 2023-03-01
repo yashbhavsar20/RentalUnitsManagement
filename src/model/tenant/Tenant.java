@@ -1,4 +1,4 @@
-package Model.Tenant;
+package model.tenant;
 
 public class Tenant {
     private String name;

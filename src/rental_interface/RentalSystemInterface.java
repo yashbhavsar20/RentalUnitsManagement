@@ -1,7 +1,7 @@
-package Interface;
+package rental_interface;
 
-import Model.Property.Property;
-import Model.Tenant.Tenant;
+import model.property.Property;
+import model.tenant.Tenant;
 
 import java.util.ArrayList;
 

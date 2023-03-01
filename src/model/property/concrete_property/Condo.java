@@ -1,6 +1,6 @@
-package Model.Property.ConcreteProperty;
+package model.property.concrete_property;
 
-import Model.Property.Property;
+import model.property.Property;
 
 public class Condo extends Property{
 	private String propertyType="CONDO";

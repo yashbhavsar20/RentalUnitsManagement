@@ -1,9 +1,9 @@
-package Model.Factory;
+package model.factory;
 
-import Model.Property.Property;
-import Model.Property.ConcreteProperty.Apartment;
-import Model.Property.ConcreteProperty.Condo;
-import Model.Property.ConcreteProperty.House;
+import model.property.Property;
+import model.property.concrete_property.Apartment;
+import model.property.concrete_property.Condo;
+import model.property.concrete_property.House;
 
 public class PropertyFactory {
 	

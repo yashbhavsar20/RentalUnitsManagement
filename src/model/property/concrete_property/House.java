@@ -1,6 +1,6 @@
-package Model.Property.ConcreteProperty;
+package model.property.concrete_property;
 
-import Model.Property.Property;
+import model.property.Property;
 public class House extends Property{
 	private String propertyType="HOUSE";
 	public House(int streetNumber, String streetName, String cityName,

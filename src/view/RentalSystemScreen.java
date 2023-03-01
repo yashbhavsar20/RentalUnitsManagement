@@ -1,10 +1,9 @@
-package View;
+package view;
 
-import Interface.RentalSystemInterface;
-import Model.Property.Property;
-import Service.RentalServices;
+import rental_interface.RentalSystemInterface;
+import model.property.Property;
+import service.RentalServices;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
