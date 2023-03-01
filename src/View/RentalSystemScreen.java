@@ -17,6 +17,7 @@ public class RentalSystemScreen {
         while (!userInput.equals("10")) {
             switch (userInput) {
                 case "1":
+                    showProperty();
                     System.out.println("Add a property");
                     break;
                 case "2":
@@ -64,5 +65,12 @@ public class RentalSystemScreen {
                 "8. Display all leases\n" +
                 "9. Rent paid or not\n" +
                 "10. Exit" );
+    }
+
+    public static void showProperty(){
+        System.out.println("Please select type of property:\n" +
+                "1. Apartment\n" +
+                "2. Add a Condo\n" +
+        );
     }
 }

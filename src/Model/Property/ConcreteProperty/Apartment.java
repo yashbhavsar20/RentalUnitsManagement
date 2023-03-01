@@ -23,8 +23,48 @@ public class Apartment extends Property{
 		this.squareFoot=squareFoot;
 	}
 
+	public String getCivicAddress() {
+		return civicAddress;
+	}
+
+	public void setCivicAddress(String civicAddress) {
+		this.civicAddress = civicAddress;
+	}
+
+	public int getApartmentNumber() {
+		return apartmentNumber;
+	}
+
+	public void setApartmentNumber(int apartmentNumber) {
+		this.apartmentNumber = apartmentNumber;
+	}
+
+	public int getNumberOfBedRooms() {
+		return numberOfBedRooms;
+	}
+
+	public void setNumberOfBedRooms(int numberOfBedRooms) {
+		this.numberOfBedRooms = numberOfBedRooms;
+	}
+
+	public int getNumberOfBathRooms() {
+		return numberOfBathRooms;
+	}
+
+	public void setNumberOfBathRooms(int numberOfBathRooms) {
+		this.numberOfBathRooms = numberOfBathRooms;
+	}
+
+	public double getSquareFoot() {
+		return squareFoot;
+	}
+
+	public void setSquareFoot(double squareFoot) {
+		this.squareFoot = squareFoot;
+	}
+
 	@Override
-	public String getProperty() {
+	public String addProperty() {
 		// TODO Auto-generated method stub
 		return "Apartment";
 	}
