@@ -58,7 +58,7 @@ public class RentalSystemScreen {
                                 result=rentalInterface.addProperty(propertyType,postalCode,cityName, province,
                                         civicAddress,"",0,
                                 0,0,0,0,apartmentList);
-
+                                System.out.println(result);
 
                                 break;
 
