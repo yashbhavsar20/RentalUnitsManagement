@@ -8,7 +8,7 @@ public class PropertyDetails {
     double squareFoot;
     int numberOfBedRooms;
     int numberOfBathRooms;
-    boolean isOccupied;
+    boolean isOccupied = false;
     Lease lease;
     ArrayList<Tenant> subscribersList=new ArrayList<>();
 
@@ -18,6 +18,12 @@ public class PropertyDetails {
         this.numberOfBathRooms = numberOfBathRooms;
         this.isOccupied = isOccupied;
         this.lease = lease;
+    }
+
+    public PropertyDetails(double squareFoot, int numberOfBedRooms, int numberOfBathRooms) {
+        this.squareFoot = squareFoot;
+        this.numberOfBedRooms = numberOfBedRooms;
+        this.numberOfBathRooms = numberOfBathRooms;
     }
 
     public double getSquareFoot() {

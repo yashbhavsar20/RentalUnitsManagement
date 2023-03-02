@@ -11,8 +11,7 @@ public class House extends Property{
 	private int streetNumber;
 	private PropertyDetails propertyDetails;
 
-	public House(String propertyType, Address address, String streetName, int streetNumber, PropertyDetails propertyDetails) {
-		this.propertyType = propertyType;
+	public House(Address address, String streetName, int streetNumber, PropertyDetails propertyDetails) {
 		this.address = address;
 		this.streetName = streetName;
 		this.streetNumber = streetNumber;
