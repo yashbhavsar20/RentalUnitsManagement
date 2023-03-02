@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 public class RentalServices implements RentalSystemInterface {
         ArrayList<Property> propertyList=new ArrayList<>();
+        ArrayList<Tenant> tenantList=new ArrayList<>();
         public void addProperty(String type,int streetNumber, String streetName, String cityName,
                                 String postalCode, String civicAddress, int apartmentNumber, int numberOfBedRooms,
                                 int numberOfBathRooms, double squareFoot) {
@@ -18,9 +19,11 @@ public class RentalServices implements RentalSystemInterface {
                     numberOfBathRooms, squareFoot));
             return;
         }
-    public void addTenant(String tenantName, long sin) {
-
-        }
+    public String addTenant(String tenantName, int age, String email){
+        Tenant tenant=new Tenant(tenantName,age,email,false);
+        tenantList.add(tenant);
+        return "Tenant: " + tenant.getTenantId() + " added successfully";
+    }
 
     public void rentUnit(Property property, Tenant tenant){
 

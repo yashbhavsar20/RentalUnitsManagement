@@ -10,7 +10,7 @@ public interface RentalSystemInterface {
 						 String postalCode, String civicAddress, int apartmentNumber, int numberOfBedRooms,
 						 int numberOfBathRooms, double squareFoot);
 
-		void addTenant(String tenantName,long sin);
+		String addTenant(String tenantName,int age, String email);
 		
 		void rentUnit(Property property, Tenant tenant);
 		

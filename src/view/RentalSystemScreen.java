@@ -79,9 +79,20 @@ public class RentalSystemScreen {
                     }
                     System.out.println("Property added Successfully");
                     break;
-                case "2":
-                    System.out.println("Add a tenant");
+                case "2":{
+                    System.out.println("Enter First Name");
+                    String firstName=sc.nextLine().trim();
+                    System.out.println("Enter Last Name");
+                    String lastName=sc.nextLine().trim();
+                    String name = firstName + " " + lastName;
+                    System.out.println("Enter age");
+                    int age=Integer.parseInt(sc.nextLine().trim());
+                    System.out.println("Enter email");
+                    String email=sc.nextLine().trim();
+                    String res = rentalInterface.addTenant(name,age,email);
+                    System.out.println(res);
                     break;
+                }
                 case "3":
                     System.out.println("Rent a unit");
                     break;

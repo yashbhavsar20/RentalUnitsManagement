@@ -1,16 +1,22 @@
 package model.tenant;
 
 public class Tenant {
+    private String tenantId;
     private String name;
     int age;
     String email;
     boolean isRentPaid;
 
     public Tenant(String name, int age, String email, boolean isRentPaid) {
+        this.tenantId = "T" + (int) (Math.random() * 100000);
         this.name = name;
         this.age = age;
         this.email = email;
         this.isRentPaid = isRentPaid;
+    }
+
+    public String getTenantId() {
+        return tenantId;
     }
 
     public String getName() {
