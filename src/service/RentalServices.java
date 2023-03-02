@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 public class RentalServices implements RentalSystemInterface {
         ArrayList<Property> propertyList=new ArrayList<>();
+        ArrayList<Tenant> tenantList=new ArrayList<>();
         public String addProperty(String propertyType,String postalCode, String cityName,
                                 String province, String civicAddress,String streetName,int streetNumber,
                                 int apartmentNumber,double squareFoot, int numberOfBedRooms,
@@ -21,9 +22,11 @@ public class RentalServices implements RentalSystemInterface {
                             numberOfBathRooms));
             return "Property Added Successfully";
         }
-    public void addTenant(String tenantName, long sin) {
-
-        }
+    public String addTenant(String tenantName, int age, String email){
+        Tenant tenant=new Tenant(tenantName,age,email,false);
+        tenantList.add(tenant);
+        return "Tenant: " + tenant.getTenantId() + " added successfully";
+    }
 
     public void rentUnit(Property property, Tenant tenant){
 
@@ -35,7 +38,10 @@ public class RentalServices implements RentalSystemInterface {
     }
 
     public void displayTenant(){
-
+        for (Tenant tenant:tenantList)
+            System.out.println("---------------------------------\n" +
+                    tenant.toString() +
+                    "---------------------------------\n");
     }
 
     public void displayRentedUnit(){
@@ -48,8 +54,12 @@ public class RentalServices implements RentalSystemInterface {
     public void displayLeases(){
 
     }
-    public void displayRentPaidStatus() {
-
+    public void displayRentPaidStatus(boolean rentPaid) {
+            for (Tenant tenant:tenantList)
+                if (tenant.isRentPaid()==rentPaid)
+                    System.out.println("---------------------------------\n" +
+                            tenant.toString() +
+                            "---------------------------------\n");
     }
 }
 

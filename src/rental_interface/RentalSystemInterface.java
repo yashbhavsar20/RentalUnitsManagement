@@ -11,7 +11,7 @@ public interface RentalSystemInterface {
 						 int apartmentNumber,double squareFoot, int numberOfBedRooms,
 						 int numberOfBathRooms);
 
-		void addTenant(String tenantName,long sin);
+		String addTenant(String tenantName,int age, String email);
 		
 		void rentUnit(Property property, Tenant tenant);
 		
@@ -25,6 +25,6 @@ public interface RentalSystemInterface {
 		
 		void displayLeases();
 		
-		void displayRentPaidStatus();
+		void displayRentPaidStatus(boolean rentPaid);
 		
 }
