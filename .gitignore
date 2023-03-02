@@ -3,4 +3,4 @@ out/
 .settings
 .project
 .classpath
-.idea
+.idea/workspace.xml
