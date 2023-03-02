@@ -1,35 +1,71 @@
 package model.property.concrete_property;
 
+import model.address.Address;
 import model.property.Property;
+import model.property.property_details.PropertyDetails;
+
 public class House extends Property{
 	private String propertyType="HOUSE";
-	public House(int streetNumber, String streetName, String cityName,
-				 String postalCode){
-		this.streetNumber=streetNumber;
-		this.streetName=streetName;
-		this.cityName=cityName;
-		this.postalCode=postalCode;
+	private Address address;
+	private String streetName;
+	private int streetNumber;
+	private PropertyDetails propertyDetails;
+
+	public House(String propertyType, Address address, String streetName, int streetNumber, PropertyDetails propertyDetails) {
+		this.propertyType = propertyType;
+		this.address = address;
+		this.streetName = streetName;
+		this.streetNumber = streetNumber;
+		this.propertyDetails = propertyDetails;
 	}
 
 	public String getPropertyType() {
 		return propertyType;
 	}
 
-	@Override
-	public String toString() {
-		return "House{" +
-				"propertyType='" + propertyType + '\'' +
-				", streetNumber=" + streetNumber +
-				", streetName='" + streetName + '\'' +
-				", cityName='" + cityName + '\'' +
-				", postalCode='" + postalCode + '\'' +
-				'}';
+	public void setPropertyType(String propertyType) {
+		this.propertyType = propertyType;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 	@Override
-	public String addProperty() {
-		// TODO Auto-generated method stub
-		return "House";
+	public String getStreetName() {
+		return streetName;
 	}
-	
+
+	@Override
+	public void setStreetName(String streetName) {
+		this.streetName = streetName;
+	}
+
+
+	@Override
+	public int getStreetNumber() {
+		return streetNumber;
+	}
+
+	@Override
+	public void setStreetNumber(int streetNumber) {
+		this.streetNumber = streetNumber;
+	}
+
+	public PropertyDetails getPropertyDetails() {
+		return propertyDetails;
+	}
+
+	public void setPropertyDetails(PropertyDetails propertyDetails) {
+		this.propertyDetails = propertyDetails;
+	}
+	@Override
+	public String addProperty() {
+		return null;
+	}
+
 }
