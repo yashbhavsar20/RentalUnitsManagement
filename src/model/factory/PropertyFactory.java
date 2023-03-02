@@ -1,7 +1,6 @@
 package model.factory;
 
 import model.property.Property;
-import model.property.concrete_property.Apartment;
 import model.property.concrete_property.Condo;
 import model.property.concrete_property.House;
 
