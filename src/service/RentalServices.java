@@ -9,13 +9,15 @@ import java.util.ArrayList;
 
 public class RentalServices implements RentalSystemInterface {
         ArrayList<Property> propertyList=new ArrayList<>();
-        public void addProperty(String type,int streetNumber, String streetName, String cityName,
-                                String postalCode, String civicAddress, int apartmentNumber, int numberOfBedRooms,
-                                int numberOfBathRooms, double squareFoot) {
+        public void addProperty(String propertyType,String postalCode, String cityName,
+                                String province, String civicAddress,String streetName,int streetNumber,
+                                int apartmentNumber,double squareFoot, int numberOfBedRooms,
+                                int numberOfBathRooms) {
             PropertyFactory propertyFactory=new PropertyFactory();
-            propertyList.add(propertyFactory.addProperty(type,streetNumber, streetName, cityName,
-                    postalCode,civicAddress,apartmentNumber, numberOfBedRooms,
-                    numberOfBathRooms, squareFoot));
+            propertyList.add(propertyFactory.addProperty(propertyType,postalCode,cityName,
+                            province, civicAddress,streetName,streetNumber,
+                            apartmentNumber,squareFoot, numberOfBedRooms,
+                            numberOfBathRooms));
             return;
         }
     public void addTenant(String tenantName, long sin) {

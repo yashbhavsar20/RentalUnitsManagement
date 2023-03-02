@@ -9,9 +9,10 @@ import model.property.property_details.PropertyDetails;
 
 public class PropertyFactory {
 	
-	public Property addProperty(String propertyType,int streetNumber, String streetName, String cityName,
-								String postalCode, String civicAddress, int apartmentNumber, int numberOfBedRooms,
-								int numberOfBathRooms, double squareFoot, String province) {
+	public Property addProperty(String propertyType,String postalCode, String cityName,
+								String province, String civicAddress,String streetName,int streetNumber,
+								int apartmentNumber,double squareFoot, int numberOfBedRooms,
+								int numberOfBathRooms) {
 
 		if (propertyType.equals("APARTMENT")) {
 			return new ApartmentBuilding(new Address(postalCode,cityName,province),
