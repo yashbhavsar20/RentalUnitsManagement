@@ -39,11 +39,8 @@ public class RentalServices implements RentalSystemInterface {
             return propertyList;
     }
 
-    public void displayTenant(){
-        for (Tenant tenant:tenantList)
-            System.out.println("---------------------------------\n" +
-                    tenant.toString() +
-                    "---------------------------------\n");
+    public ArrayList<Tenant> displayTenant(){
+        return tenantList;
     }
 
     public void displayRentedUnit(){
@@ -56,12 +53,16 @@ public class RentalServices implements RentalSystemInterface {
     public void displayLeases(){
 
     }
-    public void displayRentPaidStatus(boolean rentPaid) {
+    public ArrayList<Tenant> displayRentPaidStatus(boolean rentPaid) {
+            ArrayList<Tenant> tenantListResponse=new ArrayList<>();
             for (Tenant tenant:tenantList)
-                if (tenant.isRentPaid()==rentPaid)
-                    System.out.println("---------------------------------\n" +
-                            tenant.toString() +
-                            "---------------------------------\n");
+            {
+                if(tenant.isRentPaid()==rentPaid)
+                {
+                    tenantListResponse.add(tenant);
+                }
+            }
+            return tenantListResponse;
     }
 }
 

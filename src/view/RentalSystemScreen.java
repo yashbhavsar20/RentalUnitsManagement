@@ -1,6 +1,7 @@
 package view;
 
 import model.request_model.ApartmentRequest;
+import model.tenant.Tenant;
 import rental_interface.RentalSystemInterface;
 import model.property.Property;
 import service.RentalServices;
@@ -86,7 +87,7 @@ public class RentalSystemScreen {
                             }
 
                             case "3":{
-                                propertyType="House";
+                                propertyType="HOUSE";
                                 System.out.println("Enter Street name");
                                 String streetName=sc.nextLine().trim();
                                 System.out.println("Enter Street number");
@@ -138,7 +139,8 @@ public class RentalSystemScreen {
                     break;
                 }
                 case "5":{
-                    rentalInterface.displayTenant();
+                    ArrayList<Tenant> tenantList = rentalInterface.displayTenant();
+                    displayTenants(tenantList);
                     break;
                 }
                 case "6":
@@ -153,11 +155,13 @@ public class RentalSystemScreen {
                 case "9":{
                     System.out.println("Please select 1. for rent paid and 2. for rent not paid");
                     String rentPaidOrNot=sc.nextLine();
+                    ArrayList<Tenant> tenantList = null;
                     if(rentPaidOrNot.equals("1")){
-                        rentalInterface.displayRentPaidStatus(true);
+                        tenantList = rentalInterface.displayRentPaidStatus(true);
                     }else if(rentPaidOrNot.equals("2")){
-                        rentalInterface.displayRentPaidStatus(false);
+                        tenantList = rentalInterface.displayRentPaidStatus(false);
                     }
+                    displayTenants(tenantList);
                 }
                 default:
                     System.out.println("Invalid input");
@@ -195,5 +199,11 @@ public class RentalSystemScreen {
         for(Property property : allPropertiesList){
             System.out.println(property.toString());
         }
+    }
+    public static void displayTenants(ArrayList<Tenant> tenantList) {
+        for (Tenant tenant:tenantList)
+            System.out.println("---------------------------------\n" +
+                    tenant.toString() +
+                    "---------------------------------\n");
     }
 }
