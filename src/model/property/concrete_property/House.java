@@ -3,8 +3,9 @@ package model.property.concrete_property;
 import model.address.Address;
 import model.property.Property;
 import model.property.property_details.PropertyDetails;
+import property_display_interface.PropertyDisplay;
 
-public class House extends Property{
+public class House extends Property implements PropertyDisplay {
 	private String propertyType="HOUSE";
 	private Address address;
 	private String streetName;
@@ -34,23 +35,23 @@ public class House extends Property{
 		this.address = address;
 	}
 
-	@Override
+//	@Override
 	public String getStreetName() {
 		return streetName;
 	}
 
-	@Override
+//	@Override
 	public void setStreetName(String streetName) {
 		this.streetName = streetName;
 	}
 
 
-	@Override
+//	@Override
 	public int getStreetNumber() {
 		return streetNumber;
 	}
 
-	@Override
+//	@Override
 	public void setStreetNumber(int streetNumber) {
 		this.streetNumber = streetNumber;
 	}
@@ -67,4 +68,10 @@ public class House extends Property{
 		return null;
 	}
 
+	@Override
+	public void displayProperty() {
+		System.out.println("Address: " + address.getCity() + ", " + address.getProvince() + ", " + address.getPostalCode()
+		+ ", " + getStreetName() + ", " + getStreetNumber() + ", " + propertyDetails.getNumberOfBathRooms()
+		+ ", " + propertyDetails.getNumberOfBedRooms() + ", " + propertyDetails.getSquareFoot());
+	}
 }

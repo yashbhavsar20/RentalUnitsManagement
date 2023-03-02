@@ -2,6 +2,7 @@ package view;
 
 import model.request_model.ApartmentRequest;
 import model.tenant.Tenant;
+import property_display_interface.PropertyDisplay;
 import rental_interface.RentalSystemInterface;
 import model.property.Property;
 import service.RentalServices;
@@ -196,8 +197,9 @@ public class RentalSystemScreen {
     }
 
     public static void displayProperties(ArrayList<Property> allPropertiesList){
+//        ArrayList<PropertyDisplay> propertyListToDisplay = new ArrayList<>();
         for(Property property : allPropertiesList){
-            System.out.println(property.toString());
+            System.out.println(property);
         }
     }
     public static void displayTenants(ArrayList<Tenant> tenantList) {
