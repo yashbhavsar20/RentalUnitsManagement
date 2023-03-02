@@ -114,9 +114,15 @@ public class RentalSystemScreen {
                 case "8":
                     System.out.println("Display all leases");
                     break;
-                case "9":
-                    System.out.println("Rent paid or not");
-                    break;
+                case "9":{
+                    System.out.println("Please select 1. for rent paid and 2. for rent not paid");
+                    String rentPaidOrNot=sc.nextLine();
+                    if(rentPaidOrNot.equals("1")){
+                        rentalInterface.displayRentPaidStatus(true);
+                    }else if(rentPaidOrNot.equals("2")){
+                        rentalInterface.displayRentPaidStatus(false);
+                    }
+                }
                 default:
                     System.out.println("Invalid input");
                     break;

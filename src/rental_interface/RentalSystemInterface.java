@@ -24,6 +24,6 @@ public interface RentalSystemInterface {
 		
 		void displayLeases();
 		
-		void displayRentPaidStatus();
+		void displayRentPaidStatus(boolean rentPaid);
 		
 }

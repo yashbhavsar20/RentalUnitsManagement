@@ -51,8 +51,12 @@ public class RentalServices implements RentalSystemInterface {
     public void displayLeases(){
 
     }
-    public void displayRentPaidStatus() {
-
+    public void displayRentPaidStatus(boolean rentPaid) {
+            for (Tenant tenant:tenantList)
+                if (tenant.isRentPaid()==rentPaid)
+                    System.out.println("---------------------------------\n" +
+                            tenant.toString() +
+                            "---------------------------------\n");
     }
 }
 
