@@ -12,8 +12,7 @@ public class Condo extends Property{
 	private int unitNumber;
 	private PropertyDetails propertyDetails;
 
-	public Condo(String propertyType, Address address, String streetName, int streetNumber, int unitNumber, PropertyDetails propertyDetails) {
-		this.propertyType = propertyType;
+	public Condo(Address address, String streetName, int streetNumber, int unitNumber, PropertyDetails propertyDetails) {
 		this.address = address;
 		this.streetName = streetName;
 		this.streetNumber = streetNumber;

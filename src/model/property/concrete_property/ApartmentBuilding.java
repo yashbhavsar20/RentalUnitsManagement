@@ -12,11 +12,9 @@ public class ApartmentBuilding extends Property {
     private String civicAddress;
     private HashMap<Integer, PropertyDetails> apartments = new HashMap<Integer, PropertyDetails>();
 
-    public ApartmentBuilding(String propertyType, Address address, String civicAddress, HashMap<Integer, PropertyDetails> apartments) {
-        this.propertyType = propertyType;
+    public ApartmentBuilding(Address address, String civicAddress) {
         this.address = address;
         this.civicAddress = civicAddress;
-        this.apartments = apartments;
     }
 
 
