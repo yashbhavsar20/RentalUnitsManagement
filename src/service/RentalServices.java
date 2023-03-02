@@ -35,7 +35,10 @@ public class RentalServices implements RentalSystemInterface {
     }
 
     public void displayTenant(){
-
+        for (Tenant tenant:tenantList)
+            System.out.println("---------------------------------\n" +
+                    tenant.toString() +
+                    "---------------------------------\n");
     }
 
     public void displayRentedUnit(){

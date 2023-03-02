@@ -101,9 +101,10 @@ public class RentalSystemScreen {
                     ArrayList<Property> allPropertiesList= rentalInterface.displayProperty();
                     displayProperties(allPropertiesList);
                     break;
-                case "5":
-                    System.out.println("Display tenants");
+                case "5":{
+                    rentalInterface.displayTenant();
                     break;
+                }
                 case "6":
                     System.out.println("Display rented units");
                     break;

@@ -50,4 +50,14 @@ public class Tenant {
     public void setRentPaid(boolean rentPaid) {
         isRentPaid = rentPaid;
     }
+
+    @Override
+    public String toString() {
+        return "Tenant Details: \n" +
+                "tenant ID= " + tenantId + '\n' +
+                "name= " + name + '\n' +
+                "age= " + age + '\n' +
+                "email= " + email + '\n' +
+                "isRentPaid= " + isRentPaid + '\n';
+    }
 }
