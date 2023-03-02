@@ -6,9 +6,10 @@ import model.tenant.Tenant;
 import java.util.ArrayList;
 
 public interface RentalSystemInterface {
-		void addProperty(String type,int streetNumber, String streetName, String cityName,
-						 String postalCode, String civicAddress, int apartmentNumber, int numberOfBedRooms,
-						 int numberOfBathRooms, double squareFoot);
+		String addProperty(String propertyType,String postalCode, String cityName,
+						 String province, String civicAddress,String streetName,int streetNumber,
+						 int apartmentNumber,double squareFoot, int numberOfBedRooms,
+						 int numberOfBathRooms);
 
 		String addTenant(String tenantName,int age, String email);
 		

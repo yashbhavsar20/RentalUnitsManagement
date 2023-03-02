@@ -26,58 +26,75 @@ public class RentalSystemScreen {
                     showProperty();
                     String userPropertyInput=sc.nextLine();
                     while(!userPropertyInput.equals("4")){
-                        System.out.println("Enter Street Number");
-                        int streetNumber=Integer.parseInt(sc.nextLine().trim());
-                        System.out.println("Enter Street Name");
-                        String streetName=sc.nextLine().trim();
-                        System.out.println("Enter City Name");
-                        String cityName=sc.nextLine().trim();
                         System.out.println("Enter Postal Code");
                         String postalCode=sc.nextLine().trim();
+                        System.out.println("Enter Province");
+                        String province=sc.nextLine().trim();
+                        System.out.println("Enter City Name");
+                        String cityName=sc.nextLine().trim();
                         String propertyType="";
+                        String result="";
                         switch (userPropertyInput){
-                            case "1":
+                            case "1":{
                                 propertyType="APARTMENT";
                                 System.out.println("Enter Civic Address");
                                 String civicAddress=sc.nextLine().trim();
-                                System.out.println("Enter Apartment Number");
-                                int apartmentNumber=Integer.parseInt(sc.nextLine().trim());
-                                System.out.println("Enter Number of Bed Rooms");
+                                result=rentalInterface.addProperty(propertyType,postalCode,cityName, province,
+                                        civicAddress,"",0,
+                                0,0,0,0);
+                                System.out.println(result);
+                                break;
+
+                            }
+
+                            case "2":{
+                                propertyType="CONDO";
+                                System.out.println("Enter Street name");
+                                String streetName=sc.nextLine().trim();
+                                System.out.println("Enter Street number");
+                                int streetNumber=Integer.parseInt(sc.nextLine().trim());
+                                System.out.println("Enter Unit Number");
+                                int unitNumber=Integer.parseInt(sc.nextLine().trim());
+                                System.out.println("Enter Number of Bedrooms");
                                 int numberOfBedRooms=Integer.parseInt(sc.nextLine().trim());
-                                System.out.println("Enter Number of Bath Rooms");
+                                System.out.println("Enter Number of Bathrooms");
                                 int numberOfBathRooms=Integer.parseInt(sc.nextLine().trim());
                                 System.out.println("Enter Square Foot");
                                 double squareFoot=Double.parseDouble(sc.nextLine().trim());
-                                rentalInterface.addProperty(propertyType,streetNumber,streetName, cityName,
-                                    postalCode, civicAddress, apartmentNumber,numberOfBedRooms,
-                                    numberOfBathRooms, squareFoot);
+                                result=rentalInterface.addProperty(propertyType,postalCode,cityName,
+                                        province,"",streetName,streetNumber,unitNumber,
+                                        squareFoot,numberOfBedRooms,numberOfBathRooms);
+                                System.out.println(result);
                                 break;
+                            }
 
-                            case "2":
-                                propertyType="CONDO";
-                                System.out.println("Enter Unit Number");
-                                int unitNumber=Integer.parseInt(sc.nextLine().trim());
-                                rentalInterface.addProperty(propertyType,streetNumber,streetName, cityName,
-                                        postalCode, "", unitNumber,0,
-                                        0, 0);
-                                break;
-
-                            case "3":
+                            case "3":{
                                 propertyType="House";
-                                rentalInterface.addProperty(propertyType,streetNumber,streetName, cityName,
-                                        postalCode, "", 0,0,
-                                        0, 0);
+                                System.out.println("Enter Street name");
+                                String streetName=sc.nextLine().trim();
+                                System.out.println("Enter Street number");
+                                int streetNumber=Integer.parseInt(sc.nextLine().trim());
+                                System.out.println("Enter Number of Bedrooms");
+                                int numberOfBedRooms=Integer.parseInt(sc.nextLine().trim());
+                                System.out.println("Enter Number of Bathrooms");
+                                int numberOfBathRooms=Integer.parseInt(sc.nextLine().trim());
+                                System.out.println("Enter Square Foot");
+                                double squareFoot=Double.parseDouble(sc.nextLine().trim());
+                                result=rentalInterface.addProperty(propertyType,postalCode,cityName,
+                                        province,"",streetName,streetNumber,0,
+                                        squareFoot,numberOfBedRooms,numberOfBathRooms);
+                                System.out.println(result);
                                 break;
+                            }
 
-                            default:
+                            default:{
                                 System.out.println("Invalid Property Type");
                                 break;
-
+                            }
 
                         }
                         break;
                     }
-                    System.out.println("Property added Successfully");
                     break;
                 case "2":{
                     System.out.println("Enter First Name");
