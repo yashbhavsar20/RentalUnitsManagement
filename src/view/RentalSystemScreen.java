@@ -79,9 +79,20 @@ public class RentalSystemScreen {
                     }
                     System.out.println("Property added Successfully");
                     break;
-                case "2":
-                    System.out.println("Add a tenant");
+                case "2":{
+                    System.out.println("Enter First Name");
+                    String firstName=sc.nextLine().trim();
+                    System.out.println("Enter Last Name");
+                    String lastName=sc.nextLine().trim();
+                    String name = firstName + " " + lastName;
+                    System.out.println("Enter age");
+                    int age=Integer.parseInt(sc.nextLine().trim());
+                    System.out.println("Enter email");
+                    String email=sc.nextLine().trim();
+                    String res = rentalInterface.addTenant(name,age,email);
+                    System.out.println(res);
                     break;
+                }
                 case "3":
                     System.out.println("Rent a unit");
                     break;
@@ -90,9 +101,10 @@ public class RentalSystemScreen {
                     ArrayList<Property> allPropertiesList= rentalInterface.displayProperty();
                     displayProperties(allPropertiesList);
                     break;
-                case "5":
-                    System.out.println("Display tenants");
+                case "5":{
+                    rentalInterface.displayTenant();
                     break;
+                }
                 case "6":
                     System.out.println("Display rented units");
                     break;
@@ -102,9 +114,15 @@ public class RentalSystemScreen {
                 case "8":
                     System.out.println("Display all leases");
                     break;
-                case "9":
-                    System.out.println("Rent paid or not");
-                    break;
+                case "9":{
+                    System.out.println("Please select 1. for rent paid and 2. for rent not paid");
+                    String rentPaidOrNot=sc.nextLine();
+                    if(rentPaidOrNot.equals("1")){
+                        rentalInterface.displayRentPaidStatus(true);
+                    }else if(rentPaidOrNot.equals("2")){
+                        rentalInterface.displayRentPaidStatus(false);
+                    }
+                }
                 default:
                     System.out.println("Invalid input");
                     break;
