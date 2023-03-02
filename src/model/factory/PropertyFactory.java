@@ -9,7 +9,7 @@ import model.property.property_details.PropertyDetails;
 
 public class PropertyFactory {
 	
-	public Property addProperty(String propertyType,String postalCode, String cityName,
+	public Property addConcreteProperty(String propertyType,String postalCode, String cityName,
 								String province, String civicAddress,String streetName,int streetNumber,
 								int apartmentNumber,double squareFoot, int numberOfBedRooms,
 								int numberOfBathRooms) {

@@ -6,7 +6,7 @@ import model.tenant.Tenant;
 import java.util.ArrayList;
 
 public interface RentalSystemInterface {
-		void addProperty(String propertyType,String postalCode, String cityName,
+		String addProperty(String propertyType,String postalCode, String cityName,
 						 String province, String civicAddress,String streetName,int streetNumber,
 						 int apartmentNumber,double squareFoot, int numberOfBedRooms,
 						 int numberOfBathRooms);
