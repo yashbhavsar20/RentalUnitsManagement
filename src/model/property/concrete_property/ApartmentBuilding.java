@@ -3,7 +3,9 @@ package model.property.concrete_property;
 import model.address.Address;
 import model.property.Property;
 import model.property.property_details.PropertyDetails;
+import model.request_model.ApartmentRequest;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ApartmentBuilding extends Property {
@@ -12,9 +14,12 @@ public class ApartmentBuilding extends Property {
     private String civicAddress;
     private HashMap<Integer, PropertyDetails> apartments = new HashMap<Integer, PropertyDetails>();
 
-    public ApartmentBuilding(Address address, String civicAddress) {
+    public ApartmentBuilding(Address address, String civicAddress, ArrayList<ApartmentRequest> apartmentList) {
         this.address = address;
         this.civicAddress = civicAddress;
+        for (ApartmentRequest apartmentRequest : apartmentList) {
+            apartments.put(apartmentRequest.getApartmentNumber(), new PropertyDetails(apartmentRequest.getSquareFootage(), apartmentRequest.getNumberOfBedrooms(), apartmentRequest.getNumberOfBathrooms()));
+        }
     }
 
 
