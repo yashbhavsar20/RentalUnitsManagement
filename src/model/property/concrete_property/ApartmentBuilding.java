@@ -78,6 +78,7 @@ public class ApartmentBuilding extends Property implements PropertyDisplay {
 
     @Override
     public void displayProperty() {
+        System.out.println("---------------------------------------------------------------------------------");
         System.out.println("Address: " + address.getCity() + ", " + address.getProvince() + ", " + address.getPostalCode()
                 + ", " + getCivicAddress() + ", ");
         System.out.println("Apartments: ");
@@ -87,5 +88,6 @@ public class ApartmentBuilding extends Property implements PropertyDisplay {
             System.out.println("Number of Bedrooms: " + apartments.get(apartmentNumber).getNumberOfBedRooms());
             System.out.println("Number of Bathrooms: " + apartments.get(apartmentNumber).getNumberOfBathRooms());
         }
+        System.out.println("---------------------------------------------------------------------------------");
     }
 }

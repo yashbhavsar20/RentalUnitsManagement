@@ -70,8 +70,10 @@ public class House extends Property implements PropertyDisplay {
 
 	@Override
 	public void displayProperty() {
+		System.out.println("---------------------------------------------------------------------------------");
 		System.out.println("Address: " + address.getCity() + ", " + address.getProvince() + ", " + address.getPostalCode()
 		+ ", " + getStreetName() + ", " + getStreetNumber() + ", " + propertyDetails.getNumberOfBathRooms()
 		+ ", " + propertyDetails.getNumberOfBedRooms() + ", " + propertyDetails.getSquareFoot());
+		System.out.println("---------------------------------------------------------------------------------");
 	}
 }
