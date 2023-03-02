@@ -1,5 +1,8 @@
 package view;
 
+import model.property.concrete_property.ApartmentBuilding;
+import model.property.concrete_property.Condo;
+import model.property.concrete_property.House;
 import model.request_model.ApartmentRequest;
 import model.tenant.Tenant;
 import property_display_interface.PropertyDisplay;
@@ -199,7 +202,15 @@ public class RentalSystemScreen {
     public static void displayProperties(ArrayList<Property> allPropertiesList){
 //        ArrayList<PropertyDisplay> propertyListToDisplay = new ArrayList<>();
         for(Property property : allPropertiesList){
-            System.out.println(property);
+            if(property instanceof Condo){
+                ((Condo) property).displayProperty();
+            }
+            else if(property instanceof House){
+                ((House) property).displayProperty();
+            }
+            else if(property instanceof ApartmentBuilding){
+                ((ApartmentBuilding) property).displayProperty();
+            }
         }
     }
     public static void displayTenants(ArrayList<Tenant> tenantList) {
