@@ -3,8 +3,9 @@ package model.property.concrete_property;
 import model.address.Address;
 import model.property.Property;
 import model.property.property_details.PropertyDetails;
+import property_display_interface.PropertyDisplay;
 
-public class Condo extends Property{
+public class Condo extends Property implements PropertyDisplay {
 	private String propertyType="CONDO";
 	private Address address;
 	private String streetName;
@@ -36,22 +37,22 @@ public class Condo extends Property{
 		this.address = address;
 	}
 
-	@Override
+//	@Override
 	public String getStreetName() {
 		return streetName;
 	}
 
-	@Override
+//	@Override
 	public void setStreetName(String streetName) {
 		this.streetName = streetName;
 	}
 
-	@Override
+//	@Override
 	public int getStreetNumber() {
 		return streetNumber;
 	}
 
-	@Override
+//	@Override
 	public void setStreetNumber(int streetNumber) {
 		this.streetNumber = streetNumber;
 	}
@@ -75,5 +76,12 @@ public class Condo extends Property{
 	@Override
 	public String addProperty() {
 		return null;
+	}
+
+	@Override
+	public void displayProperty() {
+		System.out.println("Address: " + address.getCity() + ", " + address.getProvince() + ", " + address.getPostalCode()
+				+ ", " + getStreetName() + ", " + getStreetNumber() + ", " + getUnitNumber() + ", " + propertyDetails.getNumberOfBathRooms()
+				+ ", " + propertyDetails.getNumberOfBedRooms() + ", " + propertyDetails.getSquareFoot());
 	}
 }

@@ -4,11 +4,12 @@ import model.address.Address;
 import model.property.Property;
 import model.property.property_details.PropertyDetails;
 import model.request_model.ApartmentRequest;
+import property_display_interface.PropertyDisplay;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ApartmentBuilding extends Property {
+public class ApartmentBuilding extends Property implements PropertyDisplay {
     private String propertyType="APARTMENT";
     private Address address;
     private String civicAddress;
@@ -56,22 +57,35 @@ public class ApartmentBuilding extends Property {
     }
 
 
-    @Override
-    public String toString() {
-        return "ApartmentBuilding{" +
-                "propertyType='" + propertyType + '\'' +
-                ", address=" + address +
-                ", civicAddress='" + civicAddress + '\'' +
-                ", apartments=" + apartments +
-                ", streetNumber=" + streetNumber +
-                ", streetName='" + streetName + '\'' +
-                ", cityName='" + cityName + '\'' +
-                ", postalCode='" + postalCode + '\'' +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "ApartmentBuilding{" +
+//                "propertyType='" + propertyType + '\'' +
+//                ", address=" + address +
+//                ", civicAddress='" + civicAddress + '\'' +
+//                ", apartments=" + apartments +
+//                ", streetNumber=" + streetNumber +
+//                ", streetName='" + streetName + '\'' +
+//                ", cityName='" + cityName + '\'' +
+//                ", postalCode='" + postalCode + '\'' +
+//                '}';
+//    }
 
     @Override
     public String addProperty() {
         return null;
+    }
+
+    @Override
+    public void displayProperty() {
+        System.out.println("Address: " + address.getCity() + ", " + address.getProvince() + ", " + address.getPostalCode()
+                + ", " + getCivicAddress() + ", ");
+        System.out.println("Apartments: ");
+        for (Integer apartmentNumber : apartments.keySet()) {
+            System.out.println("Apartment Number: " + apartmentNumber);
+            System.out.println("Square Footage: " + apartments.get(apartmentNumber).getSquareFoot());
+            System.out.println("Number of Bedrooms: " + apartments.get(apartmentNumber).getNumberOfBedRooms());
+            System.out.println("Number of Bathrooms: " + apartments.get(apartmentNumber).getNumberOfBathRooms());
+        }
     }
 }

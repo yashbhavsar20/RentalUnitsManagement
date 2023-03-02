@@ -18,14 +18,14 @@ public interface RentalSystemInterface {
 		
 		ArrayList<Property> displayProperty();
 		
-		void displayTenant();
+		ArrayList<Tenant> displayTenant();
 		
 		void displayRentedUnit();
 		
 		void displayVacantUnit();
 		
 		void displayLeases();
-		
-		void displayRentPaidStatus(boolean rentPaid);
+
+		ArrayList<Tenant> displayRentPaidStatus(boolean rentPaid);
 		
 }

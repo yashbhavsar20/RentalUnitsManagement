@@ -1,6 +1,8 @@
 package view;
 
 import model.request_model.ApartmentRequest;
+import model.tenant.Tenant;
+import property_display_interface.PropertyDisplay;
 import rental_interface.RentalSystemInterface;
 import model.property.Property;
 import service.RentalServices;
@@ -23,7 +25,7 @@ public class RentalSystemScreen {
         String userInput = sc.nextLine();
         while (!userInput.equals("10")) {
             switch (userInput) {
-                case "1":
+                case "1":{
                     showProperty();
                     String userPropertyInput=sc.nextLine();
                     while(!userPropertyInput.equals("4")){
@@ -57,8 +59,8 @@ public class RentalSystemScreen {
                                 }
                                 result=rentalInterface.addProperty(propertyType,postalCode,cityName, province,
                                         civicAddress,"",0,
-                                0,0,0,0,apartmentList);
-
+                                        0,0,0,0,apartmentList);
+                                System.out.println(result);
 
                                 break;
 
@@ -86,7 +88,7 @@ public class RentalSystemScreen {
                             }
 
                             case "3":{
-                                propertyType="House";
+                                propertyType="HOUSE";
                                 System.out.println("Enter Street name");
                                 String streetName=sc.nextLine().trim();
                                 System.out.println("Enter Street number");
@@ -113,6 +115,7 @@ public class RentalSystemScreen {
                         break;
                     }
                     break;
+                }
                 case "2":{
                     System.out.println("Enter First Name");
                     String firstName=sc.nextLine().trim();
@@ -130,13 +133,15 @@ public class RentalSystemScreen {
                 case "3":
                     System.out.println("Rent a unit");
                     break;
-                case "4":
+                case "4":{
                     System.out.println("Display properties");
                     ArrayList<Property> allPropertiesList= rentalInterface.displayProperty();
                     displayProperties(allPropertiesList);
                     break;
+                }
                 case "5":{
-                    rentalInterface.displayTenant();
+                    ArrayList<Tenant> tenantList = rentalInterface.displayTenant();
+                    displayTenants(tenantList);
                     break;
                 }
                 case "6":
@@ -151,11 +156,13 @@ public class RentalSystemScreen {
                 case "9":{
                     System.out.println("Please select 1. for rent paid and 2. for rent not paid");
                     String rentPaidOrNot=sc.nextLine();
+                    ArrayList<Tenant> tenantList = null;
                     if(rentPaidOrNot.equals("1")){
-                        rentalInterface.displayRentPaidStatus(true);
+                        tenantList = rentalInterface.displayRentPaidStatus(true);
                     }else if(rentPaidOrNot.equals("2")){
-                        rentalInterface.displayRentPaidStatus(false);
+                        tenantList = rentalInterface.displayRentPaidStatus(false);
                     }
+                    displayTenants(tenantList);
                 }
                 default:
                     System.out.println("Invalid input");
@@ -190,8 +197,15 @@ public class RentalSystemScreen {
     }
 
     public static void displayProperties(ArrayList<Property> allPropertiesList){
+//        ArrayList<PropertyDisplay> propertyListToDisplay = new ArrayList<>();
         for(Property property : allPropertiesList){
-            System.out.println(property.toString());
+            System.out.println(property);
         }
+    }
+    public static void displayTenants(ArrayList<Tenant> tenantList) {
+        for (Tenant tenant:tenantList)
+            System.out.println("---------------------------------\n" +
+                    tenant.toString() +
+                    "---------------------------------\n");
     }
 }
