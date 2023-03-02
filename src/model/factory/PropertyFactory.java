@@ -6,17 +6,20 @@ import model.property.concrete_property.ApartmentBuilding;
 import model.property.concrete_property.Condo;
 import model.property.concrete_property.House;
 import model.property.property_details.PropertyDetails;
+import model.request_model.ApartmentRequest;
+
+import java.util.ArrayList;
 
 public class PropertyFactory {
 	
-	public Property addConcreteProperty(String propertyType,String postalCode, String cityName,
-								String province, String civicAddress,String streetName,int streetNumber,
-								int apartmentNumber,double squareFoot, int numberOfBedRooms,
-								int numberOfBathRooms) {
+	public Property addConcreteProperty(String propertyType, String postalCode, String cityName,
+										String province, String civicAddress, String streetName, int streetNumber,
+										int apartmentNumber, double squareFoot, int numberOfBedRooms,
+										int numberOfBathRooms, ArrayList<ApartmentRequest> apartmentList) {
 
 		if (propertyType.equals("APARTMENT")) {
 			return new ApartmentBuilding(new Address(postalCode,cityName,province),
-					civicAddress);
+					civicAddress, apartmentList);
 
 		}
 		else if (propertyType.equals("CONDO")) {

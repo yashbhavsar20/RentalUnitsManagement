@@ -1,5 +1,6 @@
 package view;
 
+import model.request_model.ApartmentRequest;
 import rental_interface.RentalSystemInterface;
 import model.property.Property;
 import service.RentalServices;
@@ -39,10 +40,26 @@ public class RentalSystemScreen {
                                 propertyType="APARTMENT";
                                 System.out.println("Enter Civic Address");
                                 String civicAddress=sc.nextLine().trim();
+                                System.out.println("Please enter no. of units to add");
+                                int numberOfUnits=Integer.parseInt(sc.nextLine().trim());
+                                ArrayList<ApartmentRequest> apartmentList = new ArrayList<>();
+                                for (int i=0;i<numberOfUnits;i++){
+                                    System.out.println("Enter Apt Number");
+                                    int aptNumber=Integer.parseInt(sc.nextLine().trim());
+                                    System.out.println("Enter Number of Bedrooms");
+                                    int numberOfBedRooms=Integer.parseInt(sc.nextLine().trim());
+                                    System.out.println("Enter Number of Bathrooms");
+                                    int numberOfBathRooms=Integer.parseInt(sc.nextLine().trim());
+                                    System.out.println("Enter Square Foot");
+                                    double squareFoot=Double.parseDouble(sc.nextLine().trim());
+                                    apartmentList.add(new ApartmentRequest(aptNumber,squareFoot,numberOfBedRooms,
+                                            numberOfBathRooms));
+                                }
                                 result=rentalInterface.addProperty(propertyType,postalCode,cityName, province,
                                         civicAddress,"",0,
-                                0,0,0,0);
-                                System.out.println(result);
+                                0,0,0,0,apartmentList);
+
+
                                 break;
 
                             }
@@ -63,7 +80,7 @@ public class RentalSystemScreen {
                                 double squareFoot=Double.parseDouble(sc.nextLine().trim());
                                 result=rentalInterface.addProperty(propertyType,postalCode,cityName,
                                         province,"",streetName,streetNumber,unitNumber,
-                                        squareFoot,numberOfBedRooms,numberOfBathRooms);
+                                        squareFoot,numberOfBedRooms,numberOfBathRooms,null);
                                 System.out.println(result);
                                 break;
                             }
@@ -82,7 +99,7 @@ public class RentalSystemScreen {
                                 double squareFoot=Double.parseDouble(sc.nextLine().trim());
                                 result=rentalInterface.addProperty(propertyType,postalCode,cityName,
                                         province,"",streetName,streetNumber,0,
-                                        squareFoot,numberOfBedRooms,numberOfBathRooms);
+                                        squareFoot,numberOfBedRooms,numberOfBathRooms,null);
                                 System.out.println(result);
                                 break;
                             }
