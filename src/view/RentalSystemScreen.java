@@ -23,7 +23,7 @@ public class RentalSystemScreen {
         String userInput = sc.nextLine();
         while (!userInput.equals("10")) {
             switch (userInput) {
-                case "1":
+                case "1":{
                     showProperty();
                     String userPropertyInput=sc.nextLine();
                     while(!userPropertyInput.equals("4")){
@@ -57,7 +57,7 @@ public class RentalSystemScreen {
                                 }
                                 result=rentalInterface.addProperty(propertyType,postalCode,cityName, province,
                                         civicAddress,"",0,
-                                0,0,0,0,apartmentList);
+                                        0,0,0,0,apartmentList);
                                 System.out.println(result);
 
                                 break;
@@ -113,6 +113,7 @@ public class RentalSystemScreen {
                         break;
                     }
                     break;
+                }
                 case "2":{
                     System.out.println("Enter First Name");
                     String firstName=sc.nextLine().trim();
@@ -130,11 +131,12 @@ public class RentalSystemScreen {
                 case "3":
                     System.out.println("Rent a unit");
                     break;
-                case "4":
+                case "4":{
                     System.out.println("Display properties");
                     ArrayList<Property> allPropertiesList= rentalInterface.displayProperty();
                     displayProperties(allPropertiesList);
                     break;
+                }
                 case "5":{
                     rentalInterface.displayTenant();
                     break;
