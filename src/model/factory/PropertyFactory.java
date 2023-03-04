@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class PropertyFactory {
 	
-	public Property addConcreteProperty(String propertyType, String postalCode, String cityName,
+	public Property addConcreteProperty(String propertyID,String propertyType, String postalCode, String cityName,
 										String province, String civicAddress, String streetName, int streetNumber,
 										int apartmentNumber, double squareFoot, int numberOfBedRooms,
 										int numberOfBathRooms, ArrayList<ApartmentRequest> apartmentList) {
@@ -23,12 +23,13 @@ public class PropertyFactory {
 
 		}
 		else if (propertyType.equals("CONDO")) {
-			return new Condo(new Address(postalCode,cityName,province),streetName, streetNumber,
-					apartmentNumber,new PropertyDetails(squareFoot, numberOfBedRooms,numberOfBathRooms));
+			return new Condo(new Address(postalCode,cityName,province),streetName,streetNumber,
+					apartmentNumber,new PropertyDetails(propertyID,squareFoot,numberOfBedRooms,
+					numberOfBathRooms));
 		}
 		else if(propertyType.equals("HOUSE")) {
 			return new House(new Address(postalCode,province,cityName), streetName, streetNumber,
-					new PropertyDetails(squareFoot, numberOfBedRooms,numberOfBathRooms));
+					new PropertyDetails(propertyID,squareFoot, numberOfBedRooms,numberOfBathRooms));
 		}
 		else {
 			return null;
