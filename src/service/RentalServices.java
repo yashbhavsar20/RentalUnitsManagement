@@ -60,7 +60,7 @@ public class RentalServices implements RentalSystemInterface {
                     if(!((Condo)property).getPropertyDetails().isOccupied()){
                         if(((Condo)property).getPropertyDetails().getPropertyID().equals(propertyID)){
                             //Create a new Lease.
-                            Lease lease=new Lease(leaseInfo,leaseStartDate,leaseEndDate,rentAmount,rentingTenant);
+                            Lease lease=new Lease(leaseInfo,leaseStartDate,leaseEndDate,rentAmount,rentingTenant,propertyID);
                             //Add the lease to the list
                             leaseList.add(lease);
                             //Make Property Unavailable
@@ -88,7 +88,7 @@ public class RentalServices implements RentalSystemInterface {
                         if (!details.isOccupied()) {
                             if (details.getPropertyID().equals(propertyID)) {
                                 //Create a new Lease.
-                                Lease lease = new Lease(leaseInfo, leaseStartDate, leaseEndDate, rentAmount, rentingTenant);
+                                Lease lease = new Lease(leaseInfo, leaseStartDate, leaseEndDate, rentAmount, rentingTenant,propertyID);
                                 //Add the lease to the list
                                 leaseList.add(lease);
                                 //Make Property Unavailable
@@ -118,7 +118,7 @@ public class RentalServices implements RentalSystemInterface {
                     if(!((House)property).getPropertyDetails().isOccupied()){
                         if(((House)property).getPropertyDetails().getPropertyID().equals(propertyID)){
                             //Create a new Lease.
-                            Lease lease=new Lease(leaseInfo,leaseStartDate,leaseEndDate,rentAmount,rentingTenant);
+                            Lease lease=new Lease(leaseInfo,leaseStartDate,leaseEndDate,rentAmount,rentingTenant,propertyID);
                             //Add the lease to the list
                             leaseList.add(lease);
                             //Make Property Unavailable
@@ -219,9 +219,8 @@ public class RentalServices implements RentalSystemInterface {
 
 
     }
-    public void displayLeases(){
-
-
+    public ArrayList<Lease> displayLeases(){
+        return leaseList;
     }
     public ArrayList<Tenant> displayRentPaidStatus(boolean rentPaid) {
         ArrayList<Tenant> tenantListResponse=new ArrayList<>();

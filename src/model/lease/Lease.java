@@ -11,17 +11,27 @@ public class Lease {
     double rentAmount;
     Tenant tenant;
 
-    public Lease(String leaseInfo, String leaseStartDate, String leaseEndDate, double rentAmount, Tenant tenant) {
+    String propertyID;
+
+    public Lease(String leaseInfo, String leaseStartDate, String leaseEndDate, double rentAmount, Tenant tenant, String propertyID) {
         LeaseInfo = leaseInfo;
         this.leaseStartDate = leaseStartDate;
         this.leaseEndDate = leaseEndDate;
         this.rentAmount = rentAmount;
         this.tenant = tenant;
+        this.propertyID=propertyID;
     }
 
+    public String getPropertyID() {
+        return propertyID;
+    }
+    public void setPropertyID(String propertyID) {
+        this.propertyID = propertyID;
+    }
     public String getLeaseInfo() {
         return LeaseInfo;
     }
+
 
     public void setLeaseInfo(String leaseInfo) {
         LeaseInfo = leaseInfo;
@@ -58,4 +68,16 @@ public class Lease {
     public void setTenant(Tenant tenant) {
         this.tenant = tenant;
     }
+
+    @Override
+    public String toString() {
+        return "Lease{" +
+                "LeaseInfo='" + LeaseInfo + '\'' +
+                ", leaseStartDate='" + leaseStartDate + '\'' +
+                ", leaseEndDate='" + leaseEndDate + '\'' +
+                ", rentAmount=" + rentAmount +
+                ", tenant=" + tenant +
+                '}';
+    }
+
 }
