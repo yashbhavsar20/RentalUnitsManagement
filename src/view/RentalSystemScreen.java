@@ -1,5 +1,7 @@
 package view;
 
+import interfaces.PropertyDisplay;
+import model.lease.Lease;
 import model.property.concrete_property.ApartmentBuilding;
 import model.property.concrete_property.Condo;
 import model.property.concrete_property.House;
@@ -9,6 +11,7 @@ import interfaces.RentalSystemInterface;
 import model.property.Property;
 import service.RentalServices;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -181,9 +184,13 @@ public class RentalSystemScreen {
                     displayProperties(localDisplayVacantUnit);
                     break;
                 }
-                case "8":
+                case "8":{
                     System.out.println("Display all leases");
+                    ArrayList <Lease> allLease=rentalInterface.displayLeases();
+                    displayLease(allLease);
                     break;
+                }
+
                 case "9":{
                     System.out.println("Please select 1. for rent paid and 2. for rent not paid");
                     String rentPaidOrNot=sc.nextLine();
@@ -253,6 +260,14 @@ public class RentalSystemScreen {
         for (Tenant tenant:tenantList)
             System.out.println("---------------------------------\n" +
                     tenant.toString() +
+                    "---------------------------------\n");
+    }
+
+    public static void displayLease(ArrayList<Lease> allLeaseList) {
+        for (Lease lease:allLeaseList)
+
+            System.out.println("---------------------------------\n" +
+                    lease.toString() +
                     "---------------------------------\n");
     }
 }

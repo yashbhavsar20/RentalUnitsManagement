@@ -1,5 +1,6 @@
 package interfaces;
 
+import model.lease.Lease;
 import model.property.Property;
 import model.request_model.ApartmentRequest;
 import model.tenant.Tenant;
@@ -25,7 +26,7 @@ public interface RentalSystemInterface {
 		
 		ArrayList<Property> displayVacantUnit();
 		
-		void displayLeases();
+		ArrayList<Lease> displayLeases();
 
 		ArrayList<Tenant> displayRentPaidStatus(boolean rentPaid);
 		String payRent(String tenantID);
