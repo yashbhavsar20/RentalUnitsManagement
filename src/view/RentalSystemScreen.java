@@ -138,7 +138,7 @@ public class RentalSystemScreen {
                     System.out.println(res);
                     break;
                 }
-                case "3":
+                case "3":{
                     System.out.println("Rent a unit");
                     System.out.println("Enter PropertyID");
                     String propertyID=sc.nextLine().trim();
@@ -153,9 +153,11 @@ public class RentalSystemScreen {
                     System.out.println("Enter rent amount");
                     double rentAmount=Double.parseDouble(sc.nextLine().trim());
                     String res=rentalInterface.rentUnit(propertyID, tenantID,leaseInfo,leaseStartDate,
-                                leaseEndDate,rentAmount);
+                            leaseEndDate,rentAmount);
                     System.out.println(res);
                     break;
+                }
+
                 case "4":{
                     System.out.println("Display properties");
                     ArrayList<Property> allPropertiesList= rentalInterface.displayProperty();
@@ -167,16 +169,18 @@ public class RentalSystemScreen {
                     displayTenants(tenantList);
                     break;
                 }
-                case "6":
+                case "6": {
                     System.out.println("Display rented units");
-                    ArrayList<Property> localDisplayRentedUnit=rentalInterface.displayRentedUnit();
+                    ArrayList<Property> localDisplayRentedUnit = rentalInterface.displayRentedUnit();
                     displayProperties(localDisplayRentedUnit);
                     break;
-                case "7":
+                }
+                case "7": {
                     System.out.println("Display vacant units");
                     ArrayList<Property> localDisplayVacantUnit=rentalInterface.displayVacantUnit();
                     displayProperties(localDisplayVacantUnit);
                     break;
+                }
                 case "8":
                     System.out.println("Display all leases");
                     break;
@@ -190,6 +194,13 @@ public class RentalSystemScreen {
                         tenantList = rentalInterface.displayRentPaidStatus(false);
                     }
                     displayTenants(tenantList);
+                }
+                case "11":{
+                    System.out.println("Enter tenant ID");
+                    String tenantID=sc.nextLine().trim();
+                    String res = rentalInterface.payRent(tenantID);
+                    System.out.println(res);
+                    break;
                 }
                 default:
                     System.out.println("Invalid input");
@@ -211,7 +222,8 @@ public class RentalSystemScreen {
                 "7. Display vacant units\n" +
                 "8. Display all leases\n" +
                 "9. Rent paid or not\n" +
-                "10. Exit" );
+                "10. Exit\n" +
+                "11. Pay rent" );
     }
 
     public static void showProperty(){
