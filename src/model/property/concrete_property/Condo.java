@@ -79,11 +79,12 @@ public class Condo extends Property implements PropertyDisplay {
 	}
 
 	@Override
-	public void displayProperty() {
+	public boolean displayProperty() {
 		System.out.println("---------------------------------------------------------------------------------");
 		System.out.println("Address: " + address.getCity() + ", " + address.getProvince() + ", " + address.getPostalCode()
 				+ ", " + getStreetName() + ", " + getStreetNumber() + ", " + getUnitNumber() + ", " + propertyDetails.getNumberOfBathRooms()
 				+ ", " + propertyDetails.getNumberOfBedRooms() + ", " + propertyDetails.getSquareFoot());
 		System.out.println("---------------------------------------------------------------------------------");
+		return false;
 	}
 }
