@@ -170,7 +170,7 @@ public class RentalSystemScreen {
                     break;
                 }
                 case "5":{
-                    ArrayList<Tenant> tenantList = rentalInterface.displayTenant();
+                    ArrayList<Tenant> tenantList = tenantController.displayAllTenants();
                     displayTenants(tenantList);
                     break;
                 }
@@ -207,7 +207,7 @@ public class RentalSystemScreen {
                 case "11":{
                     System.out.println("Enter tenant ID");
                     String tenantID=sc.nextLine().trim();
-                    String res = rentalInterface.payRent(tenantID);
+                    String res = tenantController.payTenantRent(tenantID);
                     System.out.println(res);
                     break;
                 }
