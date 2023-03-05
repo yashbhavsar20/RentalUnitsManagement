@@ -1,7 +1,7 @@
 package service;
 
 import model.request_model.ApartmentRequest;
-import rental_interface.RentalSystemInterface;
+import interfaces.RentalSystemInterface;
 import model.factory.PropertyFactory;
 import model.property.Property;
 import model.tenant.Tenant;

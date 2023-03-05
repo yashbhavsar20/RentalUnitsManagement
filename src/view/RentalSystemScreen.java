@@ -5,8 +5,7 @@ import model.property.concrete_property.Condo;
 import model.property.concrete_property.House;
 import model.request_model.ApartmentRequest;
 import model.tenant.Tenant;
-import property_display_interface.PropertyDisplay;
-import rental_interface.RentalSystemInterface;
+import interfaces.RentalSystemInterface;
 import model.property.Property;
 import service.RentalServices;
 
