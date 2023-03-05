@@ -28,5 +28,6 @@ public interface RentalSystemInterface {
 		void displayLeases();
 
 		ArrayList<Tenant> displayRentPaidStatus(boolean rentPaid);
+		String payRent(String tenantID);
 		
 }

@@ -234,5 +234,17 @@ public class RentalServices implements RentalSystemInterface {
         }
         return tenantListResponse;
     }
+    public String payRent(String tenantID){
+        String result="Tenant Not Found";
+        for (Tenant tenant:tenantList)
+        {
+            if(tenant.getTenantId().equals(tenantID))
+            {
+                tenant.setRentPaid(true);
+                result="Rent Paid Successfully";
+            }
+        }
+        return result;
+    }
 }
 
