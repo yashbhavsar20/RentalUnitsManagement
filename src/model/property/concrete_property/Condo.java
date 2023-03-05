@@ -3,7 +3,7 @@ package model.property.concrete_property;
 import model.address.Address;
 import model.property.Property;
 import model.property.property_details.PropertyDetails;
-import property_display_interface.PropertyDisplay;
+import interfaces.PropertyDisplay;
 
 public class Condo extends Property implements PropertyDisplay {
 	private String propertyType="CONDO";
@@ -42,7 +42,7 @@ public class Condo extends Property implements PropertyDisplay {
 		return streetName;
 	}
 
-//	@Override
+	//	@Override
 	public void setStreetName(String streetName) {
 		this.streetName = streetName;
 	}

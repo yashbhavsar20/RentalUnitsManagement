@@ -4,12 +4,13 @@ import model.address.Address;
 import model.property.Property;
 import model.property.property_details.PropertyDetails;
 import model.request_model.ApartmentRequest;
-import property_display_interface.PropertyDisplay;
+import interfaces.PropertyDisplay;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ApartmentBuilding extends Property implements PropertyDisplay {
+
     private String propertyType="APARTMENT";
     private Address address;
     private String civicAddress;
@@ -19,10 +20,9 @@ public class ApartmentBuilding extends Property implements PropertyDisplay {
         this.address = address;
         this.civicAddress = civicAddress;
         for (ApartmentRequest apartmentRequest : apartmentList) {
-            apartments.put(apartmentRequest.getApartmentNumber(), new PropertyDetails(apartmentRequest.getSquareFootage(), apartmentRequest.getNumberOfBedrooms(), apartmentRequest.getNumberOfBathrooms()));
+            apartments.put(apartmentRequest.getApartmentNumber(), new PropertyDetails(apartmentRequest.getPropertyID(),apartmentRequest.getSquareFootage(), apartmentRequest.getNumberOfBedrooms(), apartmentRequest.getNumberOfBathrooms()));
         }
     }
-
 
     public String getPropertyType() {
         return propertyType;

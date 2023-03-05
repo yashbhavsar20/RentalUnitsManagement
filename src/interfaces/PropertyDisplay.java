@@ -1,4 +1,4 @@
-package property_display_interface;
+package interfaces;
 
 public interface PropertyDisplay {
     public boolean displayProperty();

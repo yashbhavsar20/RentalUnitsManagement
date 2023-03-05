@@ -1,4 +1,4 @@
-package rental_interface;
+package interfaces;
 
 import model.property.Property;
 import model.request_model.ApartmentRequest;
@@ -7,14 +7,15 @@ import model.tenant.Tenant;
 import java.util.ArrayList;
 
 public interface RentalSystemInterface {
-		String addProperty(String propertyType, String postalCode, String cityName,
+		String addProperty(String propertyID,String propertyType, String postalCode, String cityName,
 						   String province, String civicAddress, String streetName, int streetNumber,
 						   int apartmentNumber, double squareFoot, int numberOfBedRooms,
 						   int numberOfBathRooms, ArrayList<ApartmentRequest> apartmentList);
 
 		String addTenant(String tenantName,int age, String email);
 		
-		void rentUnit(Property property, Tenant tenant);
+		String rentUnit(String propertyID, String tenantID,String leaseInfo,String leaseStartDate,
+						String leaseEndDate, double rentAmount);
 		
 		ArrayList<Property> displayProperty();
 		
