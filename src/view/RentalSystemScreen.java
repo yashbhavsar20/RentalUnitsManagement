@@ -1,5 +1,6 @@
 package view;
 
+import controller.TenantController;
 import model.property.concrete_property.ApartmentBuilding;
 import model.property.concrete_property.Condo;
 import model.property.concrete_property.House;
@@ -23,6 +24,7 @@ public class RentalSystemScreen {
     }
     public static void init(){
         RentalSystemInterface rentalInterface=new RentalServices();
+        TenantController tenantController=new TenantController();
         showMenu();
         String userInput = sc.nextLine();
         while (!userInput.equals("10")) {
@@ -134,7 +136,7 @@ public class RentalSystemScreen {
                     int age=Integer.parseInt(sc.nextLine().trim());
                     System.out.println("Enter email");
                     String email=sc.nextLine().trim();
-                    String res = rentalInterface.addTenant(name,age,email);
+                    String res = tenantController.addNewTenant(name,age,email);
                     System.out.println(res);
                     break;
                 }
