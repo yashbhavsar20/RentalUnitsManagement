@@ -222,6 +222,7 @@ public class RentalServices implements RentalSystemInterface {
     public void displayLeases(){
 
 
+
     }
     public ArrayList<Tenant> displayRentPaidStatus(boolean rentPaid) {
         ArrayList<Tenant> tenantListResponse=new ArrayList<>();
