@@ -4,7 +4,7 @@ import model.address.Address;
 import model.property.Property;
 import model.property.property_details.PropertyDetails;
 import model.request_model.ApartmentRequest;
-import property_display_interface.PropertyDisplay;
+import interfaces.PropertyDisplay;
 
 import java.util.ArrayList;
 import java.util.HashMap;
