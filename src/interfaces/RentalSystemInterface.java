@@ -1,4 +1,4 @@
-package rental_interface;
+package interfaces;
 
 import model.property.Property;
 import model.request_model.ApartmentRequest;
