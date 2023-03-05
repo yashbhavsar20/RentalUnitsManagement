@@ -141,7 +141,7 @@ public class RentalSystemScreen {
                     int age = Integer.parseInt(sc.nextLine().trim());
                     System.out.println("Enter email");
                     String email = sc.nextLine().trim();
-                    String res = tenantController.addNewTenant(name, age, email);
+                    String res = tenantController.addNewTenant(rentalInterface, name, age, email);
                     System.out.println(res);
                     break;
                 }
@@ -172,7 +172,7 @@ public class RentalSystemScreen {
                     break;
                 }
                 case "5": {
-                    ArrayList<Tenant> tenantList = tenantController.displayAllTenants();
+                    ArrayList<Tenant> tenantList = tenantController.displayAllTenants(rentalInterface);
                     displayTenants(tenantList);
                     break;
                 }
@@ -209,7 +209,7 @@ public class RentalSystemScreen {
                 case "11": {
                     System.out.println("Enter tenant ID");
                     String tenantID = sc.nextLine().trim();
-                    String res = tenantController.payTenantRent(tenantID);
+                    String res = tenantController.payTenantRent(rentalInterface,tenantID);
                     System.out.println(res);
                     break;
                 }
