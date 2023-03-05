@@ -65,7 +65,7 @@ public class RentalServices implements RentalSystemInterface {
                             leaseList.add(lease);
                             //Make Property Unavailable
                             ((Condo)property).getPropertyDetails().setOccupied(true);
-                            result="Rent added Successfully";
+                            result="Lease added Successfully";
                         }
                     }
                     else{
@@ -93,7 +93,7 @@ public class RentalServices implements RentalSystemInterface {
                                 leaseList.add(lease);
                                 //Make Property Unavailable
                                 details.setOccupied(true);
-                                result = "Rent Added Successfully";
+                                result = "Lease Added Successfully";
                             }
                         }
                         else {
@@ -123,7 +123,7 @@ public class RentalServices implements RentalSystemInterface {
                             leaseList.add(lease);
                             //Make Property Unavailable
                             ((House)property).getPropertyDetails().setOccupied(true);
-                            result="Rent added Successfully";
+                            result="Lease added Successfully";
                         }
                     }
                     else{
