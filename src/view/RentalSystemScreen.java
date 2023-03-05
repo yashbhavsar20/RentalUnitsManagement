@@ -145,7 +145,16 @@ public class RentalSystemScreen {
                     String propertyID=sc.nextLine().trim();
                     System.out.println("Enter TenantID");
                     String tenantID=sc.nextLine().trim();
-                    String res=rentalInterface.rentUnit(propertyID,tenantID);
+                    System.out.println("Enter Lease Info");
+                    String leaseInfo=sc.nextLine().trim();
+                    System.out.println("Enter Lease Start Date");
+                    String leaseStartDate=sc.nextLine().trim();
+                    System.out.println("Enter Lease End Date");
+                    String leaseEndDate=sc.nextLine().trim();
+                    System.out.println("Enter rent amount");
+                    double rentAmount=Double.parseDouble(sc.nextLine().trim());
+                    String res=rentalInterface.rentUnit(propertyID, tenantID,leaseInfo,leaseStartDate,
+                                leaseEndDate,rentAmount);
                     System.out.println(res);
                     break;
                 case "4":{

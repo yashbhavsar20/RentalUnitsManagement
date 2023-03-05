@@ -1,8 +1,10 @@
 package service;
 
+import model.lease.Lease;
 import model.property.concrete_property.ApartmentBuilding;
 import model.property.concrete_property.Condo;
 import model.property.concrete_property.House;
+import model.property.property_details.PropertyDetails;
 import model.request_model.ApartmentRequest;
 import rental_interface.RentalSystemInterface;
 import model.factory.PropertyFactory;
@@ -15,8 +17,7 @@ import java.util.HashMap;
 public class RentalServices implements RentalSystemInterface {
         ArrayList<Property> propertyList=new ArrayList<>();
         ArrayList<Tenant> tenantList=new ArrayList<>();
-
-        HashMap<Property,Tenant> leaseList=new HashMap<>();
+        ArrayList<Lease> leaseList=new ArrayList<>();
 
         public String addProperty(String propertyID,String propertyType, String postalCode, String cityName,
                                   String province, String civicAddress, String streetName, int streetNumber,
@@ -36,8 +37,12 @@ public class RentalServices implements RentalSystemInterface {
         return "Tenant: " + tenant.getTenantId() + " added successfully";
     }
 
-    public String rentUnit(String propertyID, String tenantID){
-        Property rentingProperty;
+    public String rentUnit(String propertyID, String tenantID,String leaseInfo,String leaseStartDate,
+                           String leaseEndDate, double rentAmount){
+        leaseInfo="This is a lease between a tenant and a Landlord";
+        leaseStartDate="05-03-2023";
+        leaseEndDate="05-03-2023";
+        rentAmount=1200;
         Tenant rentingTenant=null;
         String result="";
         boolean tentantFound=false;
@@ -53,42 +58,12 @@ public class RentalServices implements RentalSystemInterface {
                     //Check whether it is occupied or not.
                     if(!((Condo)property).getPropertyDetails().isOccupied()){
                         if(((Condo)property).getPropertyDetails().getPropertyID().equals(propertyID)){
-                            rentingProperty=property;
-                            //Add property and tenant in leeseList
-                            leaseList.put(rentingProperty,rentingTenant);
+                            //Create a new Lease.
+                            Lease lease=new Lease(leaseInfo,leaseStartDate,leaseEndDate,rentAmount,rentingTenant);
+                            //Add the lease to the list
+                            leaseList.add(lease);
                             //Make Property Unavailable
                             ((Condo)property).getPropertyDetails().setOccupied(true);
-                            //Fetch all subscribers
-                            ArrayList<Tenant> exixtingSubcribers=((Condo)property).getPropertyDetails().getSubscribersList();
-                            // updated subscribers list
-                            ArrayList<Tenant> temp=new ArrayList<>();
-                            for (Tenant existingTenant : exixtingSubcribers){
-                                temp.add(existingTenant);
-                            }
-                            temp.add(rentingTenant);
-                            ((Condo) property).getPropertyDetails().setSubscribersList(temp);
-                            result="Rent added Successfully";
-                        }
-                    }
-                    else{
-                        result="This property is already occupied";
-                    }
-
-                }
-                else if (property instanceof House) {
-                    if(!((House)property).getPropertyDetails().isOccupied()){
-                        if(((House)property).getPropertyDetails().getPropertyID().equals(propertyID)){
-                            rentingProperty=property;
-                            leaseList.put(rentingProperty,rentingTenant);
-                            ((House)property).getPropertyDetails().setOccupied(true);       //Make Property Unavailable
-                            ArrayList<Tenant> exixtingSubcribers=((House)property).getPropertyDetails().getSubscribersList();
-                            // updated Tenant list
-                            ArrayList<Tenant> temp=null;
-                            for (Tenant existingTenant : exixtingSubcribers){
-                                temp.add(existingTenant);
-                            }
-                            temp.add(rentingTenant);
-                            ((House) property).getPropertyDetails().setSubscribersList(temp);
                             result="Rent added Successfully";
                         }
                     }
@@ -98,19 +73,34 @@ public class RentalServices implements RentalSystemInterface {
 
                 }
                 else if (property instanceof ApartmentBuilding) {
+                    HashMap<Integer, PropertyDetails> apartments=((ApartmentBuilding) property).getApartments();
+                    for (PropertyDetails details: apartments.values()) {
+                        if (!details.isOccupied()) {
+                            if (details.getPropertyID().equals(propertyID)) {
+                                //Create a new Lease.
+                                Lease lease = new Lease(leaseInfo, leaseStartDate, leaseEndDate, rentAmount, rentingTenant);
+                                //Add the lease to the list
+                                leaseList.add(lease);
+                                //Make Property Unavailable
+                                details.setOccupied(true);
+                                result = "Rent Added Successfully";
+                            }
+                        } else {
+                            result = "This property is already occupied";
+                        }
+                    }
+
+                }
+                else if (property instanceof House) {
+                    //check it is occupied or not
                     if(!((House)property).getPropertyDetails().isOccupied()){
                         if(((House)property).getPropertyDetails().getPropertyID().equals(propertyID)){
-                            rentingProperty=property;
-                            leaseList.put(rentingProperty,rentingTenant);
-                            ((House)property).getPropertyDetails().setOccupied(true);       //Make Property Unavailable
-                            ArrayList<Tenant> exixtingSubcribers=((House)property).getPropertyDetails().getSubscribersList();
-                            // updated Tenant list
-                            ArrayList<Tenant> temp=null;
-                            for (Tenant existingTenant : exixtingSubcribers){
-                                temp.add(existingTenant);
-                            }
-                            temp.add(rentingTenant);
-                            ((House) property).getPropertyDetails().setSubscribersList(temp);
+                            //Create a new Lease.
+                            Lease lease=new Lease(leaseInfo,leaseStartDate,leaseEndDate,rentAmount,rentingTenant);
+                            //Add the lease to the list
+                            leaseList.add(lease);
+                            //Make Property Unavailable
+                            ((House)property).getPropertyDetails().setOccupied(true);
                             result="Rent added Successfully";
                         }
                     }

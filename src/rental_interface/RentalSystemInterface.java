@@ -14,7 +14,8 @@ public interface RentalSystemInterface {
 
 		String addTenant(String tenantName,int age, String email);
 		
-		String rentUnit(String propertyID, String tenantID);
+		String rentUnit(String propertyID, String tenantID,String leaseInfo,String leaseStartDate,
+						String leaseEndDate, double rentAmount);
 		
 		ArrayList<Property> displayProperty();
 		
