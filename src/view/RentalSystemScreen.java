@@ -174,7 +174,7 @@ public class RentalSystemScreen {
                     break;
                 case "7":
                     System.out.println("Display vacant units");
-                    ArrayList<Property> localDisplayVacantUnit=rentalInterface.displayRentedUnit();
+                    ArrayList<Property> localDisplayVacantUnit=rentalInterface.displayVacantUnit();
                     displayProperties(localDisplayVacantUnit);
                     break;
                 case "8":
