@@ -18,6 +18,7 @@ public class RentalServices implements RentalSystemInterface {
         ArrayList<Property> propertyList=new ArrayList<>();
         ArrayList<Tenant> tenantList=new ArrayList<>();
         ArrayList<Lease> leaseList=new ArrayList<>();
+        ArrayList<Tenant> subscriberList=new ArrayList<>();
 
         public String addProperty(String propertyID,String propertyType, String postalCode, String cityName,
                                   String province, String civicAddress, String streetName, int streetNumber,
@@ -68,7 +69,16 @@ public class RentalServices implements RentalSystemInterface {
                         }
                     }
                     else{
-                        result="This property is already occupied";
+                        if(((Condo)property).getPropertyDetails().getPropertyID().equals(propertyID)){
+                            ArrayList<Tenant> existingSubscriberList=((Condo)property).getPropertyDetails().getSubscribersList();
+                            ArrayList<Tenant> updateSubscriberList=new ArrayList<>();
+                            for (Tenant existingTenant:existingSubscriberList){
+                                updateSubscriberList.add(existingTenant);
+                            }
+                            updateSubscriberList.add(rentingTenant);
+                            ((Condo)property).getPropertyDetails().setSubscribersList(updateSubscriberList);
+                        }
+                        result="This property is already occupied. \n You have been added to the subsribers list.";
                     }
 
                 }
@@ -85,12 +95,24 @@ public class RentalServices implements RentalSystemInterface {
                                 details.setOccupied(true);
                                 result = "Rent Added Successfully";
                             }
-                        } else {
-                            result = "This property is already occupied";
                         }
-                    }
+                        else {
+                            if (details.getPropertyID().equals(propertyID)){
+                                ArrayList<Tenant> existingSubscriberList=details.getSubscribersList();
+                                ArrayList<Tenant> updateSubscriberList=new ArrayList<>();
+                                for (Tenant existingTenant:existingSubscriberList){
+                                    updateSubscriberList.add(existingTenant);
+                                }
+                                updateSubscriberList.add(rentingTenant);
+                                details.setSubscribersList(updateSubscriberList);
+                                result="This property is already occupied. \n You have been added to the subsribers list.";
+                            }
 
+                        }
+
+                    }
                 }
+
                 else if (property instanceof House) {
                     //check it is occupied or not
                     if(!((House)property).getPropertyDetails().isOccupied()){
@@ -105,7 +127,17 @@ public class RentalServices implements RentalSystemInterface {
                         }
                     }
                     else{
-                        result="This property is already occupied";
+                        if(((House)property).getPropertyDetails().getPropertyID().equals(propertyID)){
+                            ArrayList<Tenant> existingSubscriberList=((House)property).getPropertyDetails().getSubscribersList();
+                            ArrayList<Tenant> updateSubscriberList=new ArrayList<>();
+                            for (Tenant existingTenant:existingSubscriberList){
+                                updateSubscriberList.add(existingTenant);
+                            }
+                            updateSubscriberList.add(rentingTenant);
+                            ((House)property).getPropertyDetails().setSubscribersList(updateSubscriberList);
+                            result="This property is already occupied. \n You have been added to the subsribers list.";
+                        }
+
                     }
                 }
 
