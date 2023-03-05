@@ -167,8 +167,8 @@ public class RentalSystemScreen {
 
                 case "4": {
                     System.out.println("Display properties");
-                    ArrayList<Property> allPropertiesList = rentalInterface.displayProperty();
-                    displayProperties(allPropertiesList);
+                    ArrayList<Property> allPropertiesList= rentalInterface.displayProperty();
+                    displayProperties(allPropertiesList,"nocheck");
                     break;
                 }
                 case "5": {
@@ -178,14 +178,14 @@ public class RentalSystemScreen {
                 }
                 case "6": {
                     System.out.println("Display rented units");
-                    ArrayList<Property> localDisplayRentedUnit = rentalInterface.displayRentedUnit();
-                    displayProperties(localDisplayRentedUnit);
+                    ArrayList<Property> localDisplayRentedUnit=rentalInterface.displayRentedUnit();
+                    displayProperties(localDisplayRentedUnit,"rented");
                     break;
                 }
                 case "7": {
                     System.out.println("Display vacant units");
-                    ArrayList<Property> localDisplayVacantUnit = rentalInterface.displayVacantUnit();
-                    displayProperties(localDisplayVacantUnit);
+                    ArrayList<Property> localDisplayVacantUnit=rentalInterface.displayRentedUnit();
+                    displayProperties(localDisplayVacantUnit,"vacant");
                     break;
                 }
                 case "8": {
@@ -242,20 +242,31 @@ public class RentalSystemScreen {
         System.out.println("Please select type of property to add:\n" +
                 "1. Apartment\n" +
                 "2. Condo\n" +
-                "3. House\n" +
+                "3. House\n"+
                 "4. Cancel\n"
         );
     }
 
-    public static void displayProperties(ArrayList<Property> allPropertiesList) {
+    public static void displayProperties(ArrayList<Property> allPropertiesList,String check){
 //        ArrayList<PropertyDisplay> propertyListToDisplay = new ArrayList<>();
-        for (Property property : allPropertiesList) {
-            if (property instanceof Condo) {
+        for(Property property : allPropertiesList){
+            if(property instanceof Condo){
                 ((Condo) property).displayProperty();
-            } else if (property instanceof House) {
+            }
+            else if(property instanceof House){
                 ((House) property).displayProperty();
-            } else if (property instanceof ApartmentBuilding) {
-                ((ApartmentBuilding) property).displayProperty();
+            }
+            else if(property instanceof ApartmentBuilding){
+                if(check.equals("rented"))
+                {
+                    ((ApartmentBuilding) property).displayRentedProperty();
+                }
+                else if(check.equals("vacant")) {
+                    ((ApartmentBuilding) property).displayVacantProperty();
+                }
+                else {
+                    ((ApartmentBuilding) property).displayProperty();
+                }
             }
         }
     }

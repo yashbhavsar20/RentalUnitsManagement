@@ -91,4 +91,40 @@ public class ApartmentBuilding extends Property implements PropertyDisplay {
         System.out.println("---------------------------------------------------------------------------------");
         return false;
     }
+    public boolean displayVacantProperty() {
+        System.out.println("---------------------------------------------------------------------------------");
+        System.out.println("Address: " + address.getCity() + ", " + address.getProvince() + ", " + address.getPostalCode()
+                + ", " + getCivicAddress() + ", ");
+        System.out.println("Apartments: ");
+        for (Integer apartmentNumber : apartments.keySet()) {
+            if(!apartments.get(apartmentNumber).isOccupied())
+            {
+                System.out.println("Apartment Number: " + apartmentNumber);
+                System.out.println("Square Footage: " + apartments.get(apartmentNumber).getSquareFoot());
+                System.out.println("Number of Bedrooms: " + apartments.get(apartmentNumber).getNumberOfBedRooms());
+                System.out.println("Number of Bathrooms: " + apartments.get(apartmentNumber).getNumberOfBathRooms());
+            }
+
+        }
+        System.out.println("---------------------------------------------------------------------------------");
+        return false;
+    }
+    public boolean displayRentedProperty() {
+        System.out.println("---------------------------------------------------------------------------------");
+        System.out.println("Address: " + address.getCity() + ", " + address.getProvince() + ", " + address.getPostalCode()
+                + ", " + getCivicAddress() + ", ");
+        System.out.println("Apartments: ");
+        for (Integer apartmentNumber : apartments.keySet()) {
+            if(apartments.get(apartmentNumber).isOccupied())
+            {
+                System.out.println("Apartment Number: " + apartmentNumber);
+                System.out.println("Square Footage: " + apartments.get(apartmentNumber).getSquareFoot());
+                System.out.println("Number of Bedrooms: " + apartments.get(apartmentNumber).getNumberOfBedRooms());
+                System.out.println("Number of Bathrooms: " + apartments.get(apartmentNumber).getNumberOfBathRooms());
+            }
+
+        }
+        System.out.println("---------------------------------------------------------------------------------");
+        return false;
+    }
 }
