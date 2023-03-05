@@ -1,5 +1,9 @@
 package service;
 
+import model.property.concrete_property.ApartmentBuilding;
+import model.property.concrete_property.Condo;
+import model.property.concrete_property.House;
+import model.property.property_details.PropertyDetails;
 import model.request_model.ApartmentRequest;
 import rental_interface.RentalSystemInterface;
 import model.factory.PropertyFactory;
@@ -7,6 +11,7 @@ import model.property.Property;
 import model.tenant.Tenant;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class RentalServices implements RentalSystemInterface {
         ArrayList<Property> propertyList=new ArrayList<>();
@@ -32,6 +37,7 @@ public class RentalServices implements RentalSystemInterface {
 
     public void rentUnit(Property property, Tenant tenant){
 
+
     }
 
     public ArrayList<Property> displayProperty(){
@@ -43,14 +49,68 @@ public class RentalServices implements RentalSystemInterface {
         return tenantList;
     }
 
-    public void displayRentedUnit(){
+    public void displayRentedUnit() {
+        ArrayList<Property> displayRentedProperty = new ArrayList<>();
+        for (int i = 0; i < propertyList.size(); i++) {
+            Property property = propertyList.get(i);
+            if (property instanceof ApartmentBuilding) {
+                HashMap<Integer, PropertyDetails> apartments = ((ApartmentBuilding) property).getApartments();
+                for (int key : apartments.keySet()) {
+                    if (apartments.get(key).isOccupied()) {
+                        displayRentedProperty.add(property);
+                    }
+                }
+            } else if (property instanceof Condo) {
+                if (((Condo) property).getPropertyDetails().isOccupied()) {
+                    displayRentedProperty.add(property);
+                }
 
+            } else if (((House) property).getPropertyDetails().isOccupied()) {
+                displayRentedProperty.add(property);
+            }
+
+        }
+        return displayRentedProperty;
     }
 
+
+
     public void displayVacantUnit(){
+            ArrayList<Property> displayVacantProperty=new ArrayList<>();
+
+        for(int i=0;i<propertyList.size();i++)
+        {
+            Property property= propertyList.get(i);
+            if(property instanceof ApartmentBuilding)
+            {
+                HashMap<Integer, PropertyDetails> apartments=((ApartmentBuilding) property).getApartments();
+                for ( int  key : apartments.keySet() ) {
+                    if(!apartments.get(key).isOccupied())
+                    {
+                        displayVacantProperty.add(property);
+                    }
+                }
+            } else if (property instanceof Condo) {
+                if(!((Condo) property).getPropertyDetails().isOccupied())
+                {
+                    displayVacantProperty.add(property);
+                }
+
+            }
+            else
+            if(!((House) property).getPropertyDetails().isOccupied())
+            {
+                displayVacantProperty.add(property);
+            }
+
+        }
+        return displayVacantProperty;
+
+
 
     }
     public void displayLeases(){
+
 
     }
     public ArrayList<Tenant> displayRentPaidStatus(boolean rentPaid) {
