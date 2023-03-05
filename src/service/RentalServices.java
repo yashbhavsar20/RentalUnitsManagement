@@ -9,6 +9,7 @@ import model.request_model.ApartmentRequest;
 import interfaces.RentalSystemInterface;
 import model.factory.PropertyFactory;
 import model.property.Property;
+import model.response_model.LeasePropertyResponseObject;
 import model.tenant.Tenant;
 
 import java.util.ArrayList;
@@ -60,7 +61,7 @@ public class RentalServices implements RentalSystemInterface {
                     if(!((Condo)property).getPropertyDetails().isOccupied()){
                         if(((Condo)property).getPropertyDetails().getPropertyID().equals(propertyID)){
                             //Create a new Lease.
-                            Lease lease=new Lease(leaseInfo,leaseStartDate,leaseEndDate,rentAmount,rentingTenant);
+                            Lease lease=new Lease(leaseInfo,leaseStartDate,leaseEndDate,rentAmount,rentingTenant,propertyID);
                             //Add the lease to the list
                             leaseList.add(lease);
                             //Make Property Unavailable
@@ -88,7 +89,7 @@ public class RentalServices implements RentalSystemInterface {
                         if (!details.isOccupied()) {
                             if (details.getPropertyID().equals(propertyID)) {
                                 //Create a new Lease.
-                                Lease lease = new Lease(leaseInfo, leaseStartDate, leaseEndDate, rentAmount, rentingTenant);
+                                Lease lease = new Lease(leaseInfo, leaseStartDate, leaseEndDate, rentAmount, rentingTenant,propertyID);
                                 //Add the lease to the list
                                 leaseList.add(lease);
                                 //Make Property Unavailable
@@ -118,7 +119,7 @@ public class RentalServices implements RentalSystemInterface {
                     if(!((House)property).getPropertyDetails().isOccupied()){
                         if(((House)property).getPropertyDetails().getPropertyID().equals(propertyID)){
                             //Create a new Lease.
-                            Lease lease=new Lease(leaseInfo,leaseStartDate,leaseEndDate,rentAmount,rentingTenant);
+                            Lease lease=new Lease(leaseInfo,leaseStartDate,leaseEndDate,rentAmount,rentingTenant,propertyID);
                             //Add the lease to the list
                             leaseList.add(lease);
                             //Make Property Unavailable
@@ -219,10 +220,42 @@ public class RentalServices implements RentalSystemInterface {
 
 
     }
-    public void displayLeases(){
+    public ArrayList<LeasePropertyResponseObject> displayLeases(){
+        ArrayList<LeasePropertyResponseObject> leasePropertyResponseObjectArrayList=new ArrayList<>();
+        for (Lease lease:leaseList)
+        {
+            for (Property property:propertyList)
+            {
+                if(property instanceof ApartmentBuilding)
+                {
+                    HashMap<Integer, PropertyDetails> apartments=((ApartmentBuilding) property).getApartments();
+                    for ( int  key : apartments.keySet() ) {
+                        if(apartments.get(key).getPropertyID().equals(lease.getPropertyID()))
+                        {
+                            LeasePropertyResponseObject leasePropertyResponseObject=new LeasePropertyResponseObject(lease,property);
+                            leasePropertyResponseObjectArrayList.add(leasePropertyResponseObject);
+                        }
+                    }
+                }
+                else if (property instanceof Condo) {
+                    if(((Condo) property).getPropertyDetails().getPropertyID().equals(lease.getPropertyID()))
+                    {
+                        LeasePropertyResponseObject leasePropertyResponseObject=new LeasePropertyResponseObject(lease,property);
+                        leasePropertyResponseObjectArrayList.add(leasePropertyResponseObject);
+                    }
 
+                }
+                else if (property instanceof House) {
+                    if(((House) property).getPropertyDetails().getPropertyID().equals(lease.getPropertyID()))
+                    {
+                        LeasePropertyResponseObject leasePropertyResponseObject=new LeasePropertyResponseObject(lease,property);
+                        leasePropertyResponseObjectArrayList.add(leasePropertyResponseObject);
+                    }
 
-
+                }
+            }
+        }
+        return leasePropertyResponseObjectArrayList;
     }
     public ArrayList<Tenant> displayRentPaidStatus(boolean rentPaid) {
         ArrayList<Tenant> tenantListResponse=new ArrayList<>();
@@ -234,6 +267,18 @@ public class RentalServices implements RentalSystemInterface {
             }
         }
         return tenantListResponse;
+    }
+    public String payRent(String tenantID){
+        String result="Tenant Not Found";
+        for (Tenant tenant:tenantList)
+        {
+            if(tenant.getTenantId().equals(tenantID))
+            {
+                tenant.setRentPaid(true);
+                result="Rent Paid Successfully";
+            }
+        }
+        return result;
     }
 }
 
