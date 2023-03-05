@@ -21,9 +21,9 @@ public interface RentalSystemInterface {
 		
 		ArrayList<Tenant> displayTenant();
 		
-		void displayRentedUnit();
+		ArrayList<Property> displayRentedUnit();
 		
-		void displayVacantUnit();
+		ArrayList<Property> displayVacantUnit();
 		
 		void displayLeases();
 
