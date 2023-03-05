@@ -48,6 +48,8 @@ public class RentalSystemScreen {
                                 int numberOfUnits=Integer.parseInt(sc.nextLine().trim());
                                 ArrayList<ApartmentRequest> apartmentList = new ArrayList<>();
                                 for (int i=0;i<numberOfUnits;i++){
+                                    System.out.println("Enter PropertyID");
+                                    String propertyID=sc.nextLine().trim();
                                     System.out.println("Enter Apt Number");
                                     int aptNumber=Integer.parseInt(sc.nextLine().trim());
                                     System.out.println("Enter Number of Bedrooms");
@@ -56,10 +58,10 @@ public class RentalSystemScreen {
                                     int numberOfBathRooms=Integer.parseInt(sc.nextLine().trim());
                                     System.out.println("Enter Square Foot");
                                     double squareFoot=Double.parseDouble(sc.nextLine().trim());
-                                    apartmentList.add(new ApartmentRequest(aptNumber,squareFoot,numberOfBedRooms,
+                                    apartmentList.add(new ApartmentRequest(propertyID,aptNumber,squareFoot,numberOfBedRooms,
                                             numberOfBathRooms));
                                 }
-                                result=rentalInterface.addProperty(propertyType,postalCode,cityName, province,
+                                result=rentalInterface.addProperty("",propertyType,postalCode,cityName, province,
                                         civicAddress,"",0,
                                         0,0,0,0,apartmentList);
                                 System.out.println(result);
@@ -70,6 +72,8 @@ public class RentalSystemScreen {
 
                             case "2":{
                                 propertyType="CONDO";
+                                System.out.println("Enter PropertyID");
+                                String propertyID=sc.nextLine().trim();
                                 System.out.println("Enter Street name");
                                 String streetName=sc.nextLine().trim();
                                 System.out.println("Enter Street number");
@@ -82,7 +86,7 @@ public class RentalSystemScreen {
                                 int numberOfBathRooms=Integer.parseInt(sc.nextLine().trim());
                                 System.out.println("Enter Square Foot");
                                 double squareFoot=Double.parseDouble(sc.nextLine().trim());
-                                result=rentalInterface.addProperty(propertyType,postalCode,cityName,
+                                result=rentalInterface.addProperty(propertyID,propertyType,postalCode,cityName,
                                         province,"",streetName,streetNumber,unitNumber,
                                         squareFoot,numberOfBedRooms,numberOfBathRooms,null);
                                 System.out.println(result);
@@ -91,6 +95,8 @@ public class RentalSystemScreen {
 
                             case "3":{
                                 propertyType="HOUSE";
+                                System.out.println("Enter PropertyID");
+                                String propertyID=sc.nextLine().trim();
                                 System.out.println("Enter Street name");
                                 String streetName=sc.nextLine().trim();
                                 System.out.println("Enter Street number");
@@ -101,7 +107,7 @@ public class RentalSystemScreen {
                                 int numberOfBathRooms=Integer.parseInt(sc.nextLine().trim());
                                 System.out.println("Enter Square Foot");
                                 double squareFoot=Double.parseDouble(sc.nextLine().trim());
-                                result=rentalInterface.addProperty(propertyType,postalCode,cityName,
+                                result=rentalInterface.addProperty(propertyID,propertyType,postalCode,cityName,
                                         province,"",streetName,streetNumber,0,
                                         squareFoot,numberOfBedRooms,numberOfBathRooms,null);
                                 System.out.println(result);
@@ -134,6 +140,21 @@ public class RentalSystemScreen {
                 }
                 case "3":
                     System.out.println("Rent a unit");
+                    System.out.println("Enter PropertyID");
+                    String propertyID=sc.nextLine().trim();
+                    System.out.println("Enter TenantID");
+                    String tenantID=sc.nextLine().trim();
+                    System.out.println("Enter Lease Info");
+                    String leaseInfo=sc.nextLine().trim();
+                    System.out.println("Enter Lease Start Date");
+                    String leaseStartDate=sc.nextLine().trim();
+                    System.out.println("Enter Lease End Date");
+                    String leaseEndDate=sc.nextLine().trim();
+                    System.out.println("Enter rent amount");
+                    double rentAmount=Double.parseDouble(sc.nextLine().trim());
+                    String res=rentalInterface.rentUnit(propertyID, tenantID,leaseInfo,leaseStartDate,
+                                leaseEndDate,rentAmount);
+                    System.out.println(res);
                     break;
                 case "4":{
                     System.out.println("Display properties");

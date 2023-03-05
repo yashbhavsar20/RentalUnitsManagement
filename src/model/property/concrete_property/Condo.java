@@ -42,7 +42,7 @@ public class Condo extends Property implements PropertyDisplay {
 		return streetName;
 	}
 
-//	@Override
+	//	@Override
 	public void setStreetName(String streetName) {
 		this.streetName = streetName;
 	}

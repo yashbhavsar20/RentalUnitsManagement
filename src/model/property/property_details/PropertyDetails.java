@@ -5,6 +5,7 @@ import model.tenant.Tenant;
 import java.util.ArrayList;
 
 public class PropertyDetails {
+    String propertyID;
     double squareFoot;
     int numberOfBedRooms;
     int numberOfBathRooms;
@@ -12,7 +13,8 @@ public class PropertyDetails {
     Lease lease;
     ArrayList<Tenant> subscribersList=new ArrayList<>();
 
-    public PropertyDetails(double squareFoot, int numberOfBedRooms, int numberOfBathRooms, boolean isOccupied, Lease lease) {
+    public PropertyDetails(String propertyID,double squareFoot, int numberOfBedRooms, int numberOfBathRooms, boolean isOccupied, Lease lease) {
+        this.propertyID=propertyID;
         this.squareFoot = squareFoot;
         this.numberOfBedRooms = numberOfBedRooms;
         this.numberOfBathRooms = numberOfBathRooms;
@@ -20,10 +22,19 @@ public class PropertyDetails {
         this.lease = lease;
     }
 
-    public PropertyDetails(double squareFoot, int numberOfBedRooms, int numberOfBathRooms) {
+    public PropertyDetails(String propertyID,double squareFoot, int numberOfBedRooms, int numberOfBathRooms) {
+        this.propertyID=propertyID;
         this.squareFoot = squareFoot;
         this.numberOfBedRooms = numberOfBedRooms;
         this.numberOfBathRooms = numberOfBathRooms;
+    }
+
+    public String getPropertyID() {
+        return propertyID;
+    }
+
+    public void setPropertyID(String propertyID) {
+        this.propertyID = propertyID;
     }
 
     public double getSquareFoot() {

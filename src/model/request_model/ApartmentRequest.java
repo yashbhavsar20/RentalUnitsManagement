@@ -1,12 +1,15 @@
 package model.request_model;
 
 public class ApartmentRequest {
+
+    private String propertyID;
     private int apartmentNumber;
     private double squareFootage;
     private int numberOfBedrooms;
     private int numberOfBathrooms;
 
-    public ApartmentRequest(int apartmentNumber, double squareFootage, int numberOfBedrooms, int numberOfBathrooms) {
+    public ApartmentRequest(String propertyID,int apartmentNumber, double squareFootage, int numberOfBedrooms, int numberOfBathrooms) {
+        this.propertyID=propertyID;
         this.apartmentNumber = apartmentNumber;
         this.squareFootage = squareFootage;
         this.numberOfBedrooms = numberOfBedrooms;
@@ -27,6 +30,14 @@ public class ApartmentRequest {
 
     public void setSquareFootage(int squareFootage) {
         this.squareFootage = squareFootage;
+    }
+
+    public String getPropertyID() {
+        return propertyID;
+    }
+
+    public void setPropertyID(String propertyID) {
+        this.propertyID = propertyID;
     }
 
     public int getNumberOfBedrooms() {

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ApartmentBuilding extends Property implements PropertyDisplay {
+
     private String propertyType="APARTMENT";
     private Address address;
     private String civicAddress;
@@ -19,10 +20,9 @@ public class ApartmentBuilding extends Property implements PropertyDisplay {
         this.address = address;
         this.civicAddress = civicAddress;
         for (ApartmentRequest apartmentRequest : apartmentList) {
-            apartments.put(apartmentRequest.getApartmentNumber(), new PropertyDetails(apartmentRequest.getSquareFootage(), apartmentRequest.getNumberOfBedrooms(), apartmentRequest.getNumberOfBathrooms()));
+            apartments.put(apartmentRequest.getApartmentNumber(), new PropertyDetails(apartmentRequest.getPropertyID(),apartmentRequest.getSquareFootage(), apartmentRequest.getNumberOfBedrooms(), apartmentRequest.getNumberOfBathrooms()));
         }
     }
-
 
     public String getPropertyType() {
         return propertyType;
