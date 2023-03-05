@@ -169,9 +169,13 @@ public class RentalSystemScreen {
                 }
                 case "6":
                     System.out.println("Display rented units");
+                    ArrayList<Property> localDisplayRentedUnit=rentalInterface.displayRentedUnit();
+                    displayProperties(localDisplayRentedUnit);
                     break;
                 case "7":
                     System.out.println("Display vacant units");
+                    ArrayList<Property> localDisplayVacantUnit=rentalInterface.displayRentedUnit();
+                    displayProperties(localDisplayVacantUnit);
                     break;
                 case "8":
                     System.out.println("Display all leases");
