@@ -195,6 +195,13 @@ public class RentalSystemScreen {
                     }
                     displayTenants(tenantList);
                 }
+                case "11":{
+                    System.out.println("Enter tenant ID");
+                    String tenantID=sc.nextLine().trim();
+                    String res = rentalInterface.payRent(tenantID);
+                    System.out.println(res);
+                    break;
+                }
                 default:
                     System.out.println("Invalid input");
                     break;
@@ -215,7 +222,8 @@ public class RentalSystemScreen {
                 "7. Display vacant units\n" +
                 "8. Display all leases\n" +
                 "9. Rent paid or not\n" +
-                "10. Exit" );
+                "10. Exit\n" +
+                "11. Pay rent" );
     }
 
     public static void showProperty(){
