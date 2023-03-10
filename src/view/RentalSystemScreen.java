@@ -1,5 +1,7 @@
 package view;
 
+import controller.PropertyController;
+import controller.RentController;
 import controller.TenantController;
 import model.lease.Lease;
 import model.property.concrete_property.ApartmentBuilding;
@@ -30,6 +32,8 @@ public class RentalSystemScreen {
     public static void init() {
         RentalSystemInterface rentalInterface = new RentalServices();
         TenantController tenantController = new TenantController();
+        PropertyController propertyController=new PropertyController();
+        RentController rentController=new RentController();
         showMenu();
         String userInput = sc.nextLine();
         while (!userInput.equals("10")) {
@@ -68,7 +72,7 @@ public class RentalSystemScreen {
                                     apartmentList.add(new ApartmentRequest(propertyID, aptNumber, squareFoot, numberOfBedRooms,
                                             numberOfBathRooms));
                                 }
-                                result = rentalInterface.addProperty("", propertyType, postalCode, cityName, province,
+                                result = propertyController.addProperty(rentalInterface,"", propertyType, postalCode, cityName, province,
                                         civicAddress, "", 0,
                                         0, 0, 0, 0, apartmentList);
                                 System.out.println(result);
@@ -93,7 +97,7 @@ public class RentalSystemScreen {
                                 int numberOfBathRooms = Integer.parseInt(sc.nextLine().trim());
                                 System.out.println("Enter Square Foot");
                                 double squareFoot = Double.parseDouble(sc.nextLine().trim());
-                                result = rentalInterface.addProperty(propertyID, propertyType, postalCode, cityName,
+                                result = propertyController.addProperty(rentalInterface,propertyID, propertyType, postalCode, cityName,
                                         province, "", streetName, streetNumber, unitNumber,
                                         squareFoot, numberOfBedRooms, numberOfBathRooms, null);
                                 System.out.println(result);
@@ -114,7 +118,7 @@ public class RentalSystemScreen {
                                 int numberOfBathRooms = Integer.parseInt(sc.nextLine().trim());
                                 System.out.println("Enter Square Foot");
                                 double squareFoot = Double.parseDouble(sc.nextLine().trim());
-                                result = rentalInterface.addProperty(propertyID, propertyType, postalCode, cityName,
+                                result = propertyController.addProperty(rentalInterface,propertyID, propertyType, postalCode, cityName,
                                         province, "", streetName, streetNumber, 0,
                                         squareFoot, numberOfBedRooms, numberOfBathRooms, null);
                                 System.out.println(result);
@@ -159,7 +163,7 @@ public class RentalSystemScreen {
                     String leaseEndDate = sc.nextLine().trim();
                     System.out.println("Enter rent amount");
                     double rentAmount = Double.parseDouble(sc.nextLine().trim());
-                    String res = rentalInterface.rentUnit(propertyID, tenantID, leaseInfo, leaseStartDate,
+                    String res = rentController.rentUnit(rentalInterface,propertyID, tenantID, leaseInfo, leaseStartDate,
                             leaseEndDate, rentAmount);
                     System.out.println(res);
                     break;
@@ -167,7 +171,7 @@ public class RentalSystemScreen {
 
                 case "4": {
                     System.out.println("Display properties");
-                    ArrayList<Property> allPropertiesList= rentalInterface.displayProperty();
+                    ArrayList<Property> allPropertiesList= propertyController.displayProperty(rentalInterface);
                     displayProperties(allPropertiesList,"nocheck");
                     break;
                 }
