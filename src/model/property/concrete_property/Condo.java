@@ -21,6 +21,17 @@ public class Condo extends Property implements PropertyDisplay {
 		this.propertyDetails = propertyDetails;
 	}
 
+	@Override
+	public String toString() {
+		return "Condo: " +
+				"propertyType= " + propertyType + '\n' +
+				", address= " + address + "\n"+
+				", streetName= " + streetName + '\n' +
+				", streetNumber= " + streetNumber + "\n" +
+				", unitNumber= " + unitNumber + "\n" +
+				", propertyDetails= " + propertyDetails ;
+	}
+
 	public String getPropertyType() {
 		return propertyType;
 	}
@@ -67,6 +78,14 @@ public class Condo extends Property implements PropertyDisplay {
 
 	public PropertyDetails getPropertyDetails() {
 		return propertyDetails;
+	}
+	public PropertyDetails getPropertyDetails(String propertyID) {
+		if(this.propertyDetails.getPropertyID().equals(propertyID)){
+			return propertyDetails;
+		}
+		else {
+			return null;
+		}
 	}
 
 	public void setPropertyDetails(PropertyDetails propertyDetails) {

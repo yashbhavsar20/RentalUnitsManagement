@@ -21,4 +21,8 @@ public class PropertyController {
     public ArrayList<Property> displayProperty(RentalSystemInterface rentalInterface){
         return rentalInterface.displayProperty();
     }
+
+    public String makePropertyAvailable(RentalSystemInterface rentalInterface, String propertyID) {
+        return rentalInterface.makePropertyAvailable(propertyID);
+    }
 }

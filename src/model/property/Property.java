@@ -1,5 +1,7 @@
 package model.property;
 
+import model.property.property_details.PropertyDetails;
+
 public abstract class Property {
 //	protected int streetNumber;
 //	protected String streetName;
@@ -39,4 +41,5 @@ public abstract class Property {
 //	}
 
 	public abstract String addProperty();
+	public abstract PropertyDetails getPropertyDetails(String propertyID);
 }

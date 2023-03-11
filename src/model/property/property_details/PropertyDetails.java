@@ -84,4 +84,20 @@ public class PropertyDetails {
     public void setSubscribersList(ArrayList<Tenant> subscribersList) {
         this.subscribersList = subscribersList;
     }
+    public void notifySubscribers(){
+        for(Tenant tenant:subscribersList){
+            tenant.update();
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "PropertyDetails: " +
+                "squareFoot= " + squareFoot +
+                ", numberOfBedRooms= " + numberOfBedRooms +
+                ", numberOfBathRooms= " + numberOfBathRooms +
+                ", isOccupied= " + isOccupied +
+                ", lease= " + lease +
+                ", subscribersList= " + subscribersList;
+    }
 }
