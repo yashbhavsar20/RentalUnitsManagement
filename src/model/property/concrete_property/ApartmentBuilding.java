@@ -76,6 +76,18 @@ public class ApartmentBuilding extends Property implements PropertyDisplay {
         return null;
     }
 
+    public PropertyDetails getPropertyDetails() {
+        return null;
+    }
+    public PropertyDetails getPropertyDetails(String propertyID) {
+        for (PropertyDetails apartment: apartments.values()){
+            if(apartment.getPropertyID().equals(propertyID)){
+                return apartment;
+            }
+        }
+        return null;
+    }
+
     @Override
     public boolean displayProperty() {
         System.out.println("---------------------------------------------------------------------------------");

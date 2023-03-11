@@ -56,8 +56,13 @@ public class House extends Property implements PropertyDisplay {
 		this.streetNumber = streetNumber;
 	}
 
-	public PropertyDetails getPropertyDetails() {
-		return propertyDetails;
+	public PropertyDetails getPropertyDetails(String propertyID) {
+		if(this.propertyDetails.getPropertyID().equals(propertyID)){
+			return propertyDetails;
+		}
+		else {
+			return null;
+		}
 	}
 
 	public void setPropertyDetails(PropertyDetails propertyDetails) {
@@ -66,6 +71,10 @@ public class House extends Property implements PropertyDisplay {
 	@Override
 	public String addProperty() {
 		return null;
+	}
+
+	public PropertyDetails getPropertyDetails() {
+		return propertyDetails;
 	}
 
 	@Override

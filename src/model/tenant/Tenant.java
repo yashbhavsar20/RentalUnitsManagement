@@ -60,4 +60,9 @@ public class Tenant {
                 "email= " + email + '\n' +
                 "isRentPaid= " + isRentPaid + '\n';
     }
+
+    public void update() {
+        System.out.println("Tenant Email= " + getEmail() + ' ' +
+                "Email Subject: Tenant Notified.");
+    }
 }

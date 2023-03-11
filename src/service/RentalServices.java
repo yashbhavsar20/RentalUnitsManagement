@@ -280,5 +280,16 @@ public class RentalServices implements RentalSystemInterface {
         }
         return result;
     }
+
+    @Override
+    public String makePropertyAvailable(String propertyID) {
+        for (Property property : propertyList){
+            PropertyDetails propertyAvailable = property.getPropertyDetails(propertyID);
+            if(propertyAvailable!= null){
+                propertyAvailable.notifySubscribers();
+            }
+        }
+        return "Property Available and tenants notified.";
+    }
 }
 
