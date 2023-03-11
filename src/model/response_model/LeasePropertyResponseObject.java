@@ -16,8 +16,9 @@ public class LeasePropertyResponseObject {
     @Override
     public String toString() {
         return "-------------------------" +
-                "lease= " + lease +
-                ", property= " + property +
+                "lease= " + lease + "\n" +
+                ", property= " + property + "\n" +
+                property.getPropertyDetails(lease.getPropertyID()) +
                 "------------------------";
     }
 }

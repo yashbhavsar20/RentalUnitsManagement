@@ -19,6 +19,16 @@ public class House extends Property implements PropertyDisplay {
 		this.propertyDetails = propertyDetails;
 	}
 
+	@Override
+	public String toString() {
+		return "House: " +
+				"propertyType= " + propertyType + '\n' +
+				", address= " + address + "\n" +
+				", streetName= " + streetName + '\n' +
+				", streetNumber= " + streetNumber + "\n" +
+				", propertyDetails= " + propertyDetails;
+	}
+
 	public String getPropertyType() {
 		return propertyType;
 	}
