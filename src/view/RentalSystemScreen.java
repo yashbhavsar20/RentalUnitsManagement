@@ -217,6 +217,13 @@ public class RentalSystemScreen {
                     System.out.println(res);
                     break;
                 }
+                case "12": {
+                    System.out.println("Enter property ID");
+                    String propertyID = sc.nextLine().trim();
+                    String res = propertyController.makePropertyAvailable(rentalInterface,propertyID);
+                    System.out.println(res);
+                    break;
+                }
                 default:
                     System.out.println("Invalid input");
                     break;
@@ -239,7 +246,8 @@ public class RentalSystemScreen {
                 "8. Display all leases\n" +
                 "9. Rent paid or not\n" +
                 "10. Exit\n" +
-                "11. Pay rent");
+                "11. Pay rent\n" +
+                "12. Make Property Available");
     }
 
     public static void showProperty() {

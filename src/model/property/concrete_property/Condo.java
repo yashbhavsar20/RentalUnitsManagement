@@ -68,6 +68,14 @@ public class Condo extends Property implements PropertyDisplay {
 	public PropertyDetails getPropertyDetails() {
 		return propertyDetails;
 	}
+	public PropertyDetails getPropertyDetails(String propertyID) {
+		if(this.propertyDetails.getPropertyID().equals(propertyID)){
+			return propertyDetails;
+		}
+		else {
+			return null;
+		}
+	}
 
 	public void setPropertyDetails(PropertyDetails propertyDetails) {
 		this.propertyDetails = propertyDetails;

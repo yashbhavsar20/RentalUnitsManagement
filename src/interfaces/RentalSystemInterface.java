@@ -30,5 +30,5 @@ public interface RentalSystemInterface {
 
 		ArrayList<Tenant> displayRentPaidStatus(boolean rentPaid);
 		String payRent(String tenantID);
-		
+		String makePropertyAvailable(String propertyID);
 }

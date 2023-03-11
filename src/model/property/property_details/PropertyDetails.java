@@ -84,4 +84,9 @@ public class PropertyDetails {
     public void setSubscribersList(ArrayList<Tenant> subscribersList) {
         this.subscribersList = subscribersList;
     }
+    public void notifySubscribers(){
+        for(Tenant tenant:subscribersList){
+            tenant.update();
+        }
+    }
 }
