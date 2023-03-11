@@ -89,4 +89,15 @@ public class PropertyDetails {
             tenant.update();
         }
     }
+
+    @Override
+    public String toString() {
+        return "PropertyDetails: " +
+                "squareFoot= " + squareFoot +
+                ", numberOfBedRooms= " + numberOfBedRooms +
+                ", numberOfBathRooms= " + numberOfBathRooms +
+                ", isOccupied= " + isOccupied +
+                ", lease= " + lease +
+                ", subscribersList= " + subscribersList;
+    }
 }

@@ -21,6 +21,17 @@ public class Condo extends Property implements PropertyDisplay {
 		this.propertyDetails = propertyDetails;
 	}
 
+	@Override
+	public String toString() {
+		return "Condo: " +
+				"propertyType= " + propertyType + '\n' +
+				", address= " + address + "\n"+
+				", streetName= " + streetName + '\n' +
+				", streetNumber= " + streetNumber + "\n" +
+				", unitNumber= " + unitNumber + "\n" +
+				", propertyDetails= " + propertyDetails ;
+	}
+
 	public String getPropertyType() {
 		return propertyType;
 	}
