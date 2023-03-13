@@ -57,22 +57,28 @@ public class ApartmentBuilding extends Property implements PropertyDisplay {
     }
 
 
-//    @Override
-//    public String toString() {
-//        return "ApartmentBuilding{" +
-//                "propertyType='" + propertyType + '\'' +
-//                ", address=" + address +
-//                ", civicAddress='" + civicAddress + '\'' +
-//                ", apartments=" + apartments +
-//                ", streetNumber=" + streetNumber +
-//                ", streetName='" + streetName + '\'' +
-//                ", cityName='" + cityName + '\'' +
-//                ", postalCode='" + postalCode + '\'' +
-//                '}';
-//    }
+    @Override
+    public String toString() {
+        return "ApartmentBuilding: \n"+
+                ", address= " + address + "\n" +
+                ", civicAddress= '" + civicAddress + '\n' +
+                ", apartments= " + apartments;
+    }
 
     @Override
     public String addProperty() {
+        return null;
+    }
+
+    public PropertyDetails getPropertyDetails() {
+        return null;
+    }
+    public PropertyDetails getPropertyDetails(String propertyID) {
+        for (PropertyDetails apartment: apartments.values()){
+            if(apartment.getPropertyID().equals(propertyID)){
+                return apartment;
+            }
+        }
         return null;
     }
 
