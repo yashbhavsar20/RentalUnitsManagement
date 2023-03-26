@@ -55,7 +55,10 @@ public class AddPropertyController extends SwitchScene {
     public void submit(ActionEvent event){
         String res = "";
         if(type.equals("HOUSE")){
-            System.out.println("House");
+            res = Constant.api.addHouse(type, propertyID.getText(), streetName.getText(), Integer.parseInt(streetNumber.getText()),
+                    city.getText(), postalCode.getText(), province.getText(),
+                    Integer.parseInt(numberOfBedrooms.getText()), Integer.parseInt(numberOfBathrooms.getText()),
+                    Integer.parseInt(squareFoot.getText()));
         }
         else if(type.equals("APARTMENT")){
             System.out.println("Apartment");
