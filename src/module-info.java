@@ -9,10 +9,12 @@ module RentalSystem {
     requires javafx.graphics;
     requires javafx.fxml;
     requires javafx.controls;
-    exports gui.java;
-    exports gui.controller.home;
-    opens gui.java to javafx.fxml;
-    opens gui.controller.home to javafx.fxml;
+    exports gui.config;
+    exports gui.controller;
+    opens gui.config to javafx.fxml;
+    opens gui.controller to javafx.fxml;
+    exports gui.utils;
+    opens gui.utils to javafx.fxml;
 
 //    requires org.junit.jupiter.api;
 }
