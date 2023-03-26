@@ -293,4 +293,18 @@ public class RentalSystemAPI {
         ArrayList<Property> allPropertiesList= propertyController.displayProperty(rentalInterface);
         return allPropertiesList.toString();
     }
+    public static String addCondo(String propertyType, String propertyID, String streetName, int streetNumber,
+                                  String cityName, String postalCode, String province,
+                                  int unitNumber, int numberOfBedRooms, int numberOfBathRooms, double squareFoot){
+                                return propertyController.addProperty(rentalInterface,propertyID, propertyType, postalCode, cityName,
+                                        province, "", streetName, streetNumber, unitNumber,
+                                        squareFoot, numberOfBedRooms, numberOfBathRooms, null);
+    }
+    public static String addHouse(String propertyType, String propertyID, String streetName, int streetNumber,
+                                  String cityName, String postalCode, String province,
+                                  int numberOfBedRooms, int numberOfBathRooms, double squareFoot){
+                                return propertyController.addProperty(rentalInterface,propertyID, propertyType, postalCode, cityName,
+                                        province, "", streetName, streetNumber, 0,
+                                        squareFoot, numberOfBedRooms, numberOfBathRooms, null);
+    }
 }
