@@ -275,6 +275,9 @@ public class RentalSystemAPI {
         }
     }
 
+    public String addTenant(String name, int age, String email){
+        return tenantController.addNewTenant(rentalInterface,name,age,email);
+    }
     public static void displayTenants(ArrayList<Tenant> tenantList) {
         for (Tenant tenant : tenantList)
             System.out.println("---------------------------------\n" +

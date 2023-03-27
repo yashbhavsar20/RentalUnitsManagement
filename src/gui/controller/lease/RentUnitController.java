@@ -12,9 +12,6 @@ import javafx.scene.text.Text;
 import interfaces.RentalSystemInterface;
 
 public class RentUnitController extends SwitchScene {
-    RentController rentController=new RentController();
-
-    RentalSystemInterface rentalInterface=new RentalServices();
     @FXML private TextField propertyIdField;
     @FXML private TextField tenantIdField;
     @FXML private TextArea leaseInfoField;

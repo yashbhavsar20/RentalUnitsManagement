@@ -20,7 +20,7 @@
             <children>
                 <Button layoutX="284.0" layoutY="331.0" mnemonicParsing="false" text="Pay a Rent" />
                 <Button layoutX="16.0" layoutY="331.0" mnemonicParsing="false" text="Display Rent Status" />
-                <Button layoutX="16.0" layoutY="262.0" mnemonicParsing="false" text="Add a Tenant" />
+                <Button layoutX="16.0" layoutY="262.0" mnemonicParsing="false" onAction="#onAddTenantButton" text="Add a Tenant" />
                 <Label layoutX="14.0" layoutY="55.0" prefHeight="73.0" prefWidth="299.0" style="-fx-font-weight: 700;" text="Tenant Options" textFill="WHITE" wrapText="true">
                     <font>
                         <Font size="36.0" />
