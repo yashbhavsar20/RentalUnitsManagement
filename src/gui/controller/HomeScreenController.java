@@ -15,12 +15,12 @@ public class HomeScreenController extends SwitchScene {
 
     @FXML
     public void onTenantButtonClicked(ActionEvent event) throws IOException {
-        screenSwitch(Constant.ADD_TENANT, event);
+        screenSwitch(Constant.TENANT_SCREEN, event);
     }
 
     @FXML
-    public void onLeasesButtonClicked(){
-        System.out.println("Leases Button Clicked");
+    public void onLeasesButtonClicked(ActionEvent event) throws IOException{
+        screenSwitch(Constant.LEASE_SCREEN,event);
     }
 
 

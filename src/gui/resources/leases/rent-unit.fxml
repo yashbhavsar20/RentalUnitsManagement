@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.lease.RentUnitController">
+    <VBox>
+        <Label text="Rent a Property" style="-fx-font-size: 18px;"/>
+
+        <Label text="Property ID"/>
+        <TextField fx:id="propertyIdField" promptText="Enter property ID"/>
+
+        <Label text="Tenant ID"/>
+        <TextField fx:id="tenantIdField" promptText="Enter tenant ID"/>
+
+        <Label text="Lease Info (Long Description)"/>
+        <TextArea fx:id="leaseInfoField" promptText="Enter lease info" wrapText="true"/>
+
+        <Label text="Lease Start Date"/>
+        <TextField fx:id="leaseStartDateField" promptText="Enter lease start date"/>
+
+        <Label text="Lease End Date"/>
+        <TextField fx:id="leaseEndDateField" promptText="Enter lease end date"/>
+
+        <Label text="Rent Amount"/>
+        <TextField fx:id="rentAmountField" promptText="Enter rent amount"/>
+
+        <Button text="Submit" fx:id="submitButton" onAction="#onSubmitButton"/>
+    </VBox>
+</AnchorPane>

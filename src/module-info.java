@@ -17,6 +17,8 @@ module RentalSystem {
     opens gui.utils to javafx.fxml;
     exports gui.controller.property;
     opens gui.controller.property to javafx.fxml;
+    exports gui.controller.lease;
+    opens gui.controller.lease to javafx.fxml;
 
 //    requires org.junit.jupiter.api;
 }
