@@ -24,14 +24,14 @@
                         <Font size="36.0" />
                     </font>
                 </Label>
-                <TextField fx:id="streetName" layoutX="36.0" layoutY="132.0" promptText="First Name" />
-                <TextField fx:id="streetNumber" layoutX="262.0" layoutY="132.0" prefHeight="23.0" prefWidth="138.0" promptText="Last Name" />
-                <TextField fx:id="numberOfBedrooms" layoutX="36.0" layoutY="204.0" prefHeight="23.0" prefWidth="149.0" promptText="Age" />
-                <TextField fx:id="numberOfBathrooms" layoutX="262.0" layoutY="204.0" prefHeight="23.0" prefWidth="260.0" promptText="Email" />
-                <Button layoutX="185.0" layoutY="265.0" mnemonicParsing="false" text="Add Tenant" />
+                <TextField fx:id="firstNameField" layoutX="36.0" layoutY="132.0" promptText="First Name" />
+                <TextField fx:id="lastNameField" layoutX="262.0" layoutY="132.0" prefHeight="23.0" prefWidth="138.0" promptText="Last Name" />
+                <TextField fx:id="ageField" layoutX="36.0" layoutY="204.0" prefHeight="23.0" prefWidth="149.0" promptText="Age" />
+                <TextField fx:id="emailField" layoutX="262.0" layoutY="204.0" prefHeight="23.0" prefWidth="260.0" promptText="Email" />
+                <Button layoutX="185.0" layoutY="265.0" mnemonicParsing="false" onAction="#onAddTenantButton" text="Add Tenant" />
             </children>
         </Pane>
-        <Hyperlink layoutX="14.0" layoutY="14.0" text="Home" />
+        <Hyperlink layoutX="14.0" layoutY="14.0" onAction="#onHomeClicked" text="Home" />
         <!--      <Button layoutX="212.0" layoutY="200.0" mnemonicParsing="false" onAction="#onHomeButton" text="Go to home screen" />-->
     </children>
 </AnchorPane>
