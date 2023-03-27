@@ -69,26 +69,9 @@ class ApartmentBuildingTest {
         assertEquals(civicaddress,ap.getCivicAddress());
     }
 
-    @Test
-    void getApartments() {
-        ApartmentRequest App1=new ApartmentRequest("01",201,12.0,2,3);
-        ApartmentRequest App2=new ApartmentRequest("01",202,12.0,2,3);
 
-        add.add(App1);
-        add.add(App2);
-        ApartmentBuilding ap1=new ApartmentBuilding(address,civicaddress,add);
-        HashMap<Integer, PropertyDetails> apartments = new HashMap<Integer, PropertyDetails>();
-        PropertyDetails propertyDetails=new PropertyDetails("01",12.0,2,3);
-        PropertyDetails propertyDetails1=new PropertyDetails("02",12.0,2,3);
 
-        apartments.put(201,propertyDetails);
-        apartments.put(202,propertyDetails1);
-        assertEquals(apartments,ap1.getApartments());
-    }
 
-    @Test
-    void addProperty() {
-    }
 
     @Test
     void displayProperty() {

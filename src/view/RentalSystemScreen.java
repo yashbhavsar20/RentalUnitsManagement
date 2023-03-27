@@ -188,7 +188,7 @@ public class RentalSystemScreen {
                 }
                 case "7": {
                     System.out.println("Display vacant units");
-                    ArrayList<Property> localDisplayVacantUnit=rentalInterface.displayRentedUnit();
+                    ArrayList<Property> localDisplayVacantUnit=rentalInterface.displayVacantUnit();
                     displayProperties(localDisplayVacantUnit,"vacant");
                     break;
                 }
@@ -209,6 +209,7 @@ public class RentalSystemScreen {
                         tenantList = rentalInterface.displayRentPaidStatus(false);
                     }
                     displayTenants(tenantList);
+                    break;
                 }
                 case "11": {
                     System.out.println("Enter tenant ID");
