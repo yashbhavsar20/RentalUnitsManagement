@@ -1,5 +1,6 @@
 package gui.controller.lease;
 
+import gui.constants.Constant;
 import gui.utils.SwitchScene;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -27,7 +28,7 @@ public class RentUnitController extends SwitchScene {
         String leaseStartDate= leaseStartDateField.getText().trim();
         String leaseEndDate= leaseEndDateField.getText().trim();
         double rentAmount= Double.parseDouble(rentAmountField.getText());
-        String res=rentController.rentUnit(rentalInterface,propertyID, tenantID, leaseInfo, leaseStartDate,
+        String res= Constant.api.addRent(propertyID, tenantID, leaseInfo, leaseStartDate,
                 leaseEndDate, rentAmount);
         System.out.println(res);
     }

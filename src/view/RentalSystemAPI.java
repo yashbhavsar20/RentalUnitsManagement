@@ -307,4 +307,9 @@ public class RentalSystemAPI {
                                         province, "", streetName, streetNumber, 0,
                                         squareFoot, numberOfBedRooms, numberOfBathRooms, null);
     }
+
+    public String addRent(String propertyID, String tenantID, String leaseInfo, String leaseStartDate,
+                          String leaseEndDate, double rentAmount){
+                    return rentController.rentUnit(rentalInterface,propertyID,tenantID,leaseInfo,leaseStartDate,leaseEndDate,rentAmount);
+    }
 }
