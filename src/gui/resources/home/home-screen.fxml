@@ -15,7 +15,7 @@
             <Image url="https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/advisor/wp-content/uploads/2021/08/download-7.jpg" />
          </image>
       </ImageView>
-      <Circle fill="#263257" layoutX="227.0" layoutY="211.0" radius="257.0" scaleX="1.5" stroke="WHITE" strokeType="INSIDE" translateX="-7.0" />
+      <Circle fill="#263257" layoutX="227.0" layoutY="211.0" radius="257.0" scaleX="1.5" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" translateX="-7.0" />
       <Label layoutX="11.0" layoutY="8.0" style="-fx-font-family: Arial Rounded MT Bold;" text="Property Rental System" textFill="WHITE">
          <font>
             <Font size="14.0" />

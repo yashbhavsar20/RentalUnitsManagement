@@ -1,6 +1,9 @@
 package gui.constants;
 
+import view.RentalSystemAPI;
+
 public class Constant {
+    public static final RentalSystemAPI api = new RentalSystemAPI();
     public static final String HOME_SCREEN = "/gui/resources/home/home-screen.fxml";
     public static final String ADD_PROPERTY = "/gui/resources/property/add-property.fxml";
     public static final String PROPERTY_SCREEN = "/gui/resources/property/property-screen.fxml";
