@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="526.0" prefWidth="735.0" stylesheets="@../../css/home-screen.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.tenant.AddTenantController">
+    <children>
+        <ImageView fitHeight="526.0" fitWidth="743.0" layoutX="-8.0" pickOnBounds="true">
+            <image>
+                <Image url="@../../assets/082fbeaf4e8047c886e660a26508ef4b-cc_ft_960.jpg" />
+            </image>
+        </ImageView>
+        <Pane layoutX="85.0" layoutY="14.0" prefHeight="480.0" prefWidth="565.0" style="-fx-background-radius: 50; -fx-background-color: rgba(38, 50, 87,0.88);">
+            <children>
+                <Label layoutX="36.0" layoutY="28.0" style="-fx-font-weight: 700; -fx-font-family: Arial Rounded MT Bold;" stylesheets="@../../css/home-screen.css" text="Add A Tenant Page" textFill="WHITE">
+                    <font>
+                        <Font size="36.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="firstNameField" layoutX="36.0" layoutY="132.0" promptText="First Name" />
+                <TextField fx:id="lastNameField" layoutX="262.0" layoutY="132.0" prefHeight="23.0" prefWidth="138.0" promptText="Last Name" />
+                <TextField fx:id="ageField" layoutX="36.0" layoutY="204.0" prefHeight="23.0" prefWidth="149.0" promptText="Age" />
+                <TextField fx:id="emailField" layoutX="262.0" layoutY="204.0" prefHeight="23.0" prefWidth="260.0" promptText="Email" />
+                <Button layoutX="185.0" layoutY="265.0" mnemonicParsing="false" onAction="#onAddTenantButton" text="Add Tenant" />
+            </children>
+        </Pane>
+        <Hyperlink layoutX="14.0" layoutY="14.0" onAction="#onHomeClicked" text="Home" />
+        <!--      <Button layoutX="212.0" layoutY="200.0" mnemonicParsing="false" onAction="#onHomeButton" text="Go to home screen" />-->
+    </children>
+</AnchorPane>

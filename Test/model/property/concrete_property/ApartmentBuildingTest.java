@@ -72,6 +72,9 @@ class ApartmentBuildingTest {
 
 
 
+    @Test
+    void addProperty() {
+    }
 
     @Test
     void displayProperty() {

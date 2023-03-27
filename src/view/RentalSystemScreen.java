@@ -182,13 +182,13 @@ public class RentalSystemScreen {
                 }
                 case "6": {
                     System.out.println("Display rented units");
-                    ArrayList<Property> localDisplayRentedUnit=rentalInterface.displayRentedUnit();
+                    ArrayList<Property> localDisplayRentedUnit=rentController.displayRentedUnit(rentalInterface);
                     displayProperties(localDisplayRentedUnit,"rented");
                     break;
                 }
                 case "7": {
                     System.out.println("Display vacant units");
-                    ArrayList<Property> localDisplayVacantUnit=rentalInterface.displayVacantUnit();
+                    ArrayList<Property> localDisplayVacantUnit=rentController.displayVacantUnit(rentalInterface);
                     displayProperties(localDisplayVacantUnit,"vacant");
                     break;
                 }
@@ -201,7 +201,7 @@ public class RentalSystemScreen {
 
                 case "9": {
                     System.out.println("Please select 1. for rent paid and 2. for rent not paid");
-                    String rentPaidOrNot = sc.nextLine();
+                    String rentPaidOrNot = sc.nextLine().trim();
                     ArrayList<Tenant> tenantList = null;
                     if (rentPaidOrNot.equals("1")) {
                         tenantList = rentalInterface.displayRentPaidStatus(true);
