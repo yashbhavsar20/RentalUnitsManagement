@@ -275,6 +275,9 @@ public class RentalSystemAPI {
         }
     }
 
+    public String addTenant(String name, int age, String email){
+        return tenantController.addNewTenant(rentalInterface,name,age,email);
+    }
     public static void displayTenants(ArrayList<Tenant> tenantList) {
         for (Tenant tenant : tenantList)
             System.out.println("---------------------------------\n" +
@@ -320,5 +323,10 @@ public class RentalSystemAPI {
     public static String getAllRentedUnits(){
         ArrayList<Property> localDisplayRentedUnit=rentController.displayRentedUnit(rentalInterface);
         return localDisplayRentedUnit.toString();
+    }
+
+    public String addRent(String propertyID, String tenantID, String leaseInfo, String leaseStartDate,
+                          String leaseEndDate, double rentAmount){
+                    return rentController.rentUnit(rentalInterface,propertyID,tenantID,leaseInfo,leaseStartDate,leaseEndDate,rentAmount);
     }
 }
