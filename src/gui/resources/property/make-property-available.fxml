@@ -27,6 +27,7 @@
             <Button layoutX="33.0" layoutY="268.0" mnemonicParsing="false" onAction="#submit" text="Submit" />
             <Label layoutX="32.0" layoutY="152.0" stylesheets="@../../css/home-screen.css" text="Please enter property ID" textFill="WHITE" />
             <TextField fx:id="propertyID" layoutX="32.0" layoutY="190.0" />
+            <Label fx:id="resLabel" layoutX="36.0" layoutY="345.0" text="Label" textFill="WHITE" />
          </children>
       </Pane>
       <Hyperlink layoutX="14.0" layoutY="14.0" onAction="#onHomeClicked" text="Home" />
