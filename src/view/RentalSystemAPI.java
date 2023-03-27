@@ -307,4 +307,8 @@ public class RentalSystemAPI {
                                         province, "", streetName, streetNumber, 0,
                                         squareFoot, numberOfBedRooms, numberOfBathRooms, null);
     }
+
+    public static String makePropertyAvailable(String propertyID){
+        return propertyController.makePropertyAvailable(rentalInterface,propertyID);
+    }
 }
