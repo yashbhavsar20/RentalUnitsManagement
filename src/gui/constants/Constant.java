@@ -12,5 +12,10 @@ public class Constant {
     public static final String DISPLAY_VACANT_UNITS = "/gui/resources/property/display-vacant-units.fxml";
     public static final String MAKE_PROPERTY_AVAILABLE = "/gui/resources/property/make-property-available.fxml";
     public static final String ADD_TENANT = "/gui/resources/tenant/add-tenant.fxml";
+
+    public static final String LEASE_SCREEN = "/gui/resources/leases/lease-screen.fxml";
+    public static final String RENT_UNIT="/gui/resources/leases/rent-unit.fxml";
+    public static final String TENANT_SCREEN="/gui/resources/tenant/tenant-screen.fxml";
+
 //    public static final String ADD_LEASE = "/gui/resources/lease/add-lease.fxml";
 }
