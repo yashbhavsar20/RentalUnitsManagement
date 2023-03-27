@@ -2,6 +2,8 @@ package gui.controller;
 
 import gui.constants.Constant;
 import gui.controller.property.DisplayPropertyController;
+import gui.controller.property.DisplayRentedUnitsController;
+import gui.controller.property.DisplayVacantUnitsController;
 import gui.utils.SwitchScene;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,10 +34,22 @@ public class PropertyScreenController extends SwitchScene {
         screenSwitch(root, event);
     }
     public void onDisplayRentedUnitsButton(ActionEvent event) throws IOException {
-        screenSwitch(Constant.DISPLAY_RENTED_UNITS, event);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(Constant.DISPLAY_RENTED_UNITS));
+        root = loader.load();
+
+        DisplayRentedUnitsController displayRentedUnitsController = loader.getController();
+        displayRentedUnitsController.showRentedUnits(Constant.api.getAllRentedUnits());
+
+        screenSwitch(root, event);
     }
     public void onDisplayVacantUnitsButton(ActionEvent event) throws IOException {
-        screenSwitch(Constant.DISPLAY_VACANT_UNITS, event);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(Constant.DISPLAY_VACANT_UNITS));
+        root = loader.load();
+
+        DisplayVacantUnitsController displayVacantUnitsController = loader.getController();
+        displayVacantUnitsController.showVacantUnits(Constant.api.getAllVacantUnits());
+
+        screenSwitch(root, event);
     }
     public void onMakePropertyAvailableButton(ActionEvent event) throws IOException {
         screenSwitch(Constant.MAKE_PROPERTY_AVAILABLE, event);

@@ -311,4 +311,14 @@ public class RentalSystemAPI {
     public static String makePropertyAvailable(String propertyID){
         return propertyController.makePropertyAvailable(rentalInterface,propertyID);
     }
+
+    public static String getAllVacantUnits(){
+        ArrayList<Property> localDisplayVacantUnit=rentController.displayVacantUnit(rentalInterface);
+        return localDisplayVacantUnit.toString();
+    }
+
+    public static String getAllRentedUnits(){
+        ArrayList<Property> localDisplayRentedUnit=rentController.displayRentedUnit(rentalInterface);
+        return localDisplayRentedUnit.toString();
+    }
 }
