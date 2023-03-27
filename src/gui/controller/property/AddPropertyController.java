@@ -4,9 +4,11 @@ import gui.constants.Constant;
 import gui.utils.SwitchScene;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class AddPropertyController extends SwitchScene {
     String type;
@@ -30,7 +32,8 @@ public class AddPropertyController extends SwitchScene {
     TextField numberOfBedrooms;
     @FXML
     TextField numberOfBathrooms;
-
+    @FXML
+    Label resLabel;
 
     @FXML
     public void onHomeClicked(ActionEvent event) throws IOException {
@@ -52,7 +55,7 @@ public class AddPropertyController extends SwitchScene {
         type = "CONDO";
     }
 
-    public void submit(ActionEvent event){
+    public void submit(ActionEvent event) throws InterruptedException, IOException {
         String res = "";
         if(type.equals("HOUSE")){
             res = Constant.api.addHouse(type, propertyID.getText(), streetName.getText(), Integer.parseInt(streetNumber.getText()),
@@ -69,6 +72,20 @@ public class AddPropertyController extends SwitchScene {
                     Integer.parseInt(numberOfBedrooms.getText()), Integer.parseInt(numberOfBathrooms.getText()),
                     Integer.parseInt(squareFoot.getText()));
         }
-        System.out.println(res);
+//        System.out.println(res);
+        resLabel.setText(res);
+        if(res.equals("Property added successfully")){
+            type = "";
+            propertyID.setText("");
+            streetName.setText("");
+            streetNumber.setText("");
+            city.setText("");
+            postalCode.setText("");
+            province.setText("");
+            unitNumber.setText("");
+            numberOfBedrooms.setText("");
+            numberOfBathrooms.setText("");
+            squareFoot.setText("");
+        }
     }
 }

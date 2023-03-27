@@ -44,6 +44,7 @@
             <TextField fx:id="numberOfBathrooms" layoutX="194.0" layoutY="240.0" prefHeight="23.0" prefWidth="149.0" promptText="Enter No. of Bathrooms" />
             <TextField fx:id="squareFoot" layoutX="351.0" layoutY="240.0" prefHeight="23.0" prefWidth="84.0" promptText="Enter Sq.Ft." />
             <Button layoutX="36.0" layoutY="330.0" mnemonicParsing="false" onAction="#submit" text="Submit" />
+            <Label fx:id="resLabel" layoutX="36.0" layoutY="403.0" textFill="WHITE" />
          </children>
       </Pane>
       <Hyperlink layoutX="14.0" layoutY="14.0" onAction="#onHomeClicked" text="Home" />
