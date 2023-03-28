@@ -296,6 +296,13 @@ public class RentalSystemAPI {
         ArrayList<Property> allPropertiesList= propertyController.displayProperty(rentalInterface);
         return allPropertiesList.toString();
     }
+    public static String addApartment(String propertyType, String civicAddress,
+                                      String cityName, String postalCode, String province,
+                                      ArrayList apartmentList){
+                                return propertyController.addProperty(rentalInterface,"", propertyType, postalCode, cityName, province,
+                                        civicAddress, "", 0,
+                                        0, 0, 0, 0, apartmentList);
+    }
     public static String addCondo(String propertyType, String propertyID, String streetName, int streetNumber,
                                   String cityName, String postalCode, String province,
                                   int unitNumber, int numberOfBedRooms, int numberOfBathRooms, double squareFoot){
