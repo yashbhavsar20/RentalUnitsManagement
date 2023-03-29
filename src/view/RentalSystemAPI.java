@@ -1,9 +1,11 @@
 package view;
 
+import controller.LeaseController;
 import controller.PropertyController;
 import controller.RentController;
 import controller.TenantController;
 import interfaces.RentalSystemInterface;
+import model.lease.Lease;
 import model.property.Property;
 import model.property.concrete_property.ApartmentBuilding;
 import model.property.concrete_property.Condo;
@@ -20,6 +22,7 @@ public class RentalSystemAPI {
     static TenantController tenantController = new TenantController();
     static PropertyController propertyController=new PropertyController();
     static RentController rentController=new RentController();
+    static LeaseController leaseController=new LeaseController();
     public RentalSystemAPI() {
     }
 
@@ -335,5 +338,10 @@ public class RentalSystemAPI {
     public String addRent(String propertyID, String tenantID, String leaseInfo, String leaseStartDate,
                           String leaseEndDate, double rentAmount){
                     return rentController.rentUnit(rentalInterface,propertyID,tenantID,leaseInfo,leaseStartDate,leaseEndDate,rentAmount);
+    }
+
+    public static String getAllLease(){
+        ArrayList<LeasePropertyResponseObject> localDisplayLeases=leaseController.displayLeases(rentalInterface);
+        return localDisplayLeases.toString();
     }
 }

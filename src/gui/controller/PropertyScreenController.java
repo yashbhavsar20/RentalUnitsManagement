@@ -1,5 +1,6 @@
 package gui.controller;
 
+import gui.config.Config;
 import gui.constants.Constant;
 import gui.controller.property.DisplayPropertyController;
 import gui.controller.property.DisplayRentedUnitsController;
@@ -23,6 +24,21 @@ public class PropertyScreenController extends SwitchScene {
         screenSwitch(Constant.ADD_PROPERTY, event);
     }
     public void onDisplayPropertyButton(ActionEvent event) throws IOException {
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    executeOnDisplayPropertyButton(event);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        };
+
+        Thread thread = new Thread(runnable);
+        thread.start();
+    }
+    public void executeOnDisplayPropertyButton(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(Constant.DISPLAY_PROPERTY));
         root = loader.load();
 
