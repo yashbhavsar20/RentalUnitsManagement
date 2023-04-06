@@ -8,7 +8,6 @@ import model.property.Property;
 import model.property.concrete_property.ApartmentBuilding;
 import model.property.concrete_property.Condo;
 import model.property.concrete_property.House;
-import model.request_model.ApartmentRequest;
 import model.response_model.LeasePropertyResponseObject;
 import model.tenant.Tenant;
 import service.RentalServices;
@@ -278,12 +277,20 @@ public class RentalSystemAPI {
     public String addTenant(String name, int age, String email){
         return tenantController.addNewTenant(rentalInterface,name,age,email);
     }
-    public static void displayTenants(ArrayList<Tenant> tenantList) {
-        for (Tenant tenant : tenantList)
-            System.out.println("---------------------------------\n" +
-                    tenant.toString() +
-                    "---------------------------------\n");
+    public static String displayTenants() {
+        ArrayList<Tenant> allTenantList= tenantController.displayAllTenants(rentalInterface);
+        return allTenantList.toString();
+
     }
+    public static String rentPaidStatus(){
+        ArrayList<Tenant> allTenantList = tenantController.rentPaidStatus(rentalInterface);
+        return allTenantList.toString();
+    }
+    public static String rentNotPaidStatus(){
+        ArrayList<Tenant> allTenantList = tenantController.rentNotPaidStatus(rentalInterface);
+        return allTenantList.toString();
+    }
+
 
     public static void displayLease(ArrayList<LeasePropertyResponseObject> allLeaseList) {
         for (LeasePropertyResponseObject leasePropertyResponseObject : allLeaseList) {
@@ -328,5 +335,9 @@ public class RentalSystemAPI {
     public String addRent(String propertyID, String tenantID, String leaseInfo, String leaseStartDate,
                           String leaseEndDate, double rentAmount){
                     return rentController.rentUnit(rentalInterface,propertyID,tenantID,leaseInfo,leaseStartDate,leaseEndDate,rentAmount);
+    }
+    public String PayRent(String tenantid)
+    {
+        return tenantController.payTenantRent(rentalInterface,tenantid);
     }
 }
