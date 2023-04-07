@@ -26,7 +26,7 @@ public class AddPropertyController extends SwitchScene {
     String type;
     int totalUnits = 0;
     ArrayList<model.request_model.ApartmentRequest> apartmentList = new ArrayList();
-    String type = "APARTMENT";
+//    String type = "APARTMENT";
     @FXML
     TextField unitNumber;
     @FXML
