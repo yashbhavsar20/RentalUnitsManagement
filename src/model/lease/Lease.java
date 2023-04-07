@@ -71,13 +71,13 @@ public class Lease {
 
     @Override
     public String toString() {
-        return "Lease{" +
-                "LeaseInfo='" + LeaseInfo + '\'' +
-                ", leaseStartDate='" + leaseStartDate + '\'' +
-                ", leaseEndDate='" + leaseEndDate + '\'' +
-                ", rentAmount=" + rentAmount +
+        return "\n\n" + "Lease Details: " +
+                "LeaseInfo='" + LeaseInfo + "\n" +
+                ", leaseStartDate='" + leaseStartDate + "\n" +
+                ", leaseEndDate='" + leaseEndDate + "\n" +
+                ", rentAmount=" + rentAmount + "\n" +
                 ", tenant=" + tenant +
-                '}';
+                "\n\n";
     }
 
 }

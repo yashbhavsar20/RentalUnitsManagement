@@ -92,12 +92,12 @@ public class PropertyDetails {
 
     @Override
     public String toString() {
-        return "PropertyDetails: " +
-                "squareFoot= " + squareFoot +
-                ", numberOfBedRooms= " + numberOfBedRooms +
-                ", numberOfBathRooms= " + numberOfBathRooms +
-                ", isOccupied= " + isOccupied +
-                ", lease= " + lease +
-                ", subscribersList= " + subscribersList;
+        return  "PropertyDetails: " + "\n" +
+                "squareFoot= " + squareFoot + "\n" +
+                ", numberOfBedRooms= " + numberOfBedRooms + "\n" +
+                ", numberOfBathRooms= " + numberOfBathRooms + "\n" +
+                ", isOccupied= " + isOccupied + "\n" +
+                ", lease= " + lease + "\n" +
+                ", subscribersList= " + subscribersList + "\n";
     }
 }
