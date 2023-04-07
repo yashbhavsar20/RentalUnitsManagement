@@ -1,9 +1,11 @@
 package view;
 
+import controller.LeaseController;
 import controller.PropertyController;
 import controller.RentController;
 import controller.TenantController;
 import interfaces.RentalSystemInterface;
+import model.lease.Lease;
 import model.property.Property;
 import model.property.concrete_property.ApartmentBuilding;
 import model.property.concrete_property.Condo;
@@ -19,6 +21,7 @@ public class RentalSystemAPI {
     static TenantController tenantController = new TenantController();
     static PropertyController propertyController=new PropertyController();
     static RentController rentController=new RentController();
+    static LeaseController leaseController=new LeaseController();
     public RentalSystemAPI() {
     }
 
@@ -303,6 +306,13 @@ public class RentalSystemAPI {
         ArrayList<Property> allPropertiesList= propertyController.displayProperty(rentalInterface);
         return allPropertiesList.toString();
     }
+    public static String addApartment(String propertyType, String civicAddress,
+                                      String cityName, String postalCode, String province,
+                                      ArrayList apartmentList){
+                                return propertyController.addProperty(rentalInterface,"", propertyType, postalCode, cityName, province,
+                                        civicAddress, "", 0,
+                                        0, 0, 0, 0, apartmentList);
+    }
     public static String addCondo(String propertyType, String propertyID, String streetName, int streetNumber,
                                   String cityName, String postalCode, String province,
                                   int unitNumber, int numberOfBedRooms, int numberOfBathRooms, double squareFoot){
@@ -339,5 +349,10 @@ public class RentalSystemAPI {
     public String PayRent(String tenantid)
     {
         return tenantController.payTenantRent(rentalInterface,tenantid);
+    }
+
+    public static String getAllLease(){
+        ArrayList<LeasePropertyResponseObject> localDisplayLeases=leaseController.displayLeases(rentalInterface);
+        return localDisplayLeases.toString();
     }
 }

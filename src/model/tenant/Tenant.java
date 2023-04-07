@@ -53,12 +53,12 @@ public class Tenant {
 
     @Override
     public String toString() {
-        return "Tenant Details: \n" +
+        return "\n\n" + "Tenant Details: \n" +
                 "tenant ID= " + tenantId + '\n' +
                 "name= " + name + '\n' +
                 "age= " + age + '\n' +
                 "email= " + email + '\n' +
-                "isRentPaid= " + isRentPaid + '\n';
+                "isRentPaid= " + isRentPaid + "\n\n";
     }
 
     public void update() {

@@ -15,10 +15,10 @@ public class LeasePropertyResponseObject {
 
     @Override
     public String toString() {
-        return "-------------------------" +
+        return "\n\n" + "-------------------------" + "\n" +
                 "lease= " + lease + "\n" +
                 ", property= " + property + "\n" +
                 property.getPropertyDetails(lease.getPropertyID()) +
-                "------------------------";
+                "------------------------" + "\n\n";
     }
 }

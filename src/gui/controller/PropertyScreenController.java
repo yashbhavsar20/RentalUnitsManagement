@@ -1,10 +1,12 @@
 package gui.controller;
 
+import gui.config.Config;
 import gui.constants.Constant;
 import gui.controller.property.DisplayPropertyController;
 import gui.controller.property.DisplayRentedUnitsController;
 import gui.controller.property.DisplayVacantUnitsController;
 import gui.utils.SwitchScene;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -35,7 +37,24 @@ public class PropertyScreenController extends SwitchScene {
     public void onDisplayPropertyButton(ActionEvent event) throws IOException {
         this.mediaPlayer = new MediaPlayer(musicplay);
         this.mediaPlayer.setAutoPlay(true);
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    executeOnDisplayPropertyButton(event);
+                } catch (IOException e) {
+                    System.out.println("Exception occured");
+                    throw new RuntimeException(e);
+                }
+            }
+        };
 
+        Thread thread = new Thread(runnable);
+        System.out.println("I am here");
+        thread.start();
+    }
+    public void executeOnDisplayPropertyButton(ActionEvent event) throws IOException {
+        System.out.println("Hello");
         FXMLLoader loader = new FXMLLoader(getClass().getResource(Constant.DISPLAY_PROPERTY));
         root = loader.load();
 
@@ -43,8 +62,16 @@ public class PropertyScreenController extends SwitchScene {
 
         displayPropertyController.showProperties(Constant.api.getAllProperties());
 
-//        To switch screen using root whenever something has changed in view
-        screenSwitch(root, event);
+//      To switch screen using root whenever something has changed in view
+        Platform.runLater(() -> {
+            // GUI-related code here
+            try {
+                screenSwitch(root, event);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
     }
     public void onDisplayRentedUnitsButton(ActionEvent event) throws IOException {
         this.mediaPlayer = new MediaPlayer(musicplay);

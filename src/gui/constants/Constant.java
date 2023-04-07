@@ -24,5 +24,7 @@ public class Constant {
     public static final String RENT_UNIT="/gui/resources/leases/rent-unit.fxml";
     public static final String TENANT_SCREEN="/gui/resources/tenant/tenant-screen.fxml";
 
+    public static final String DISPLAY_LEASE="/gui/resources/leases/display-leases.fxml";
+
 //    public static final String ADD_LEASE = "/gui/resources/lease/add-lease.fxml";
 }

@@ -21,12 +21,12 @@ public class House extends Property implements PropertyDisplay {
 
 	@Override
 	public String toString() {
-		return "House: " +
+		return "\n\n" + "House: " +
 				"propertyType= " + propertyType + '\n' +
-				", address= " + address + "\n" +
+				"," + address + "\n"+
 				", streetName= " + streetName + '\n' +
 				", streetNumber= " + streetNumber + "\n" +
-				", propertyDetails= " + propertyDetails;
+				"," + propertyDetails;
 	}
 
 	public String getPropertyType() {
@@ -89,11 +89,13 @@ public class House extends Property implements PropertyDisplay {
 
 	@Override
 	public boolean displayProperty() {
+		System.out.println("\n");
 		System.out.println("---------------------------------------------------------------------------------");
 		System.out.println("Address: " + address.getCity() + ", " + address.getProvince() + ", " + address.getPostalCode()
 		+ ", " + getStreetName() + ", " + getStreetNumber() + ", " + propertyDetails.getNumberOfBathRooms()
 		+ ", " + propertyDetails.getNumberOfBedRooms() + ", " + propertyDetails.getSquareFoot());
 		System.out.println("---------------------------------------------------------------------------------");
+		System.out.println("\n");
         return false;
     }
 }

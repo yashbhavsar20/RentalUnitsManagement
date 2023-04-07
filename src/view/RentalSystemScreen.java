@@ -1,5 +1,6 @@
 package view;
 
+import controller.LeaseController;
 import controller.PropertyController;
 import controller.RentController;
 import controller.TenantController;
@@ -34,6 +35,7 @@ public class RentalSystemScreen {
         TenantController tenantController = new TenantController();
         PropertyController propertyController=new PropertyController();
         RentController rentController=new RentController();
+        LeaseController leaseController=new LeaseController();
         showMenu();
         String userInput = sc.nextLine();
         while (!userInput.equals("10")) {
@@ -194,7 +196,7 @@ public class RentalSystemScreen {
                 }
                 case "8": {
                     System.out.println("Display all leases");
-                    ArrayList<LeasePropertyResponseObject> allLease = rentalInterface.displayLeases();
+                    ArrayList<LeasePropertyResponseObject> allLease = leaseController.displayLeases(rentalInterface);
                     displayLease(allLease);
                     break;
                 }

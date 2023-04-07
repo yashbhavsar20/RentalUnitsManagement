@@ -23,13 +23,13 @@ public class Condo extends Property implements PropertyDisplay {
 
 	@Override
 	public String toString() {
-		return "Condo: " +
+		return "\n\n" + "Condo: " +
 				"propertyType= " + propertyType + '\n' +
-				", address= " + address + "\n"+
+				"," + address + "\n"+
 				", streetName= " + streetName + '\n' +
 				", streetNumber= " + streetNumber + "\n" +
 				", unitNumber= " + unitNumber + "\n" +
-				", propertyDetails= " + propertyDetails ;
+				"," + propertyDetails;
 	}
 
 	public String getPropertyType() {
@@ -99,11 +99,13 @@ public class Condo extends Property implements PropertyDisplay {
 
 	@Override
 	public boolean displayProperty() {
+		System.out.println("\n");
 		System.out.println("---------------------------------------------------------------------------------");
 		System.out.println("Address: " + address.getCity() + ", " + address.getProvince() + ", " + address.getPostalCode()
 				+ ", " + getStreetName() + ", " + getStreetNumber() + ", " + getUnitNumber() + ", " + propertyDetails.getNumberOfBathRooms()
 				+ ", " + propertyDetails.getNumberOfBedRooms() + ", " + propertyDetails.getSquareFoot());
 		System.out.println("---------------------------------------------------------------------------------");
+		System.out.println("\n");
 		return false;
 	}
 }
