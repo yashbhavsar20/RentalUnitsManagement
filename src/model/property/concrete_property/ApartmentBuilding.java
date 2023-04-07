@@ -59,10 +59,17 @@ public class ApartmentBuilding extends Property implements PropertyDisplay {
 
     @Override
     public String toString() {
-        return "ApartmentBuilding: \n"+
-                ", address= " + address + "\n" +
-                ", civicAddress= '" + civicAddress + '\n' +
-                ", apartments= " + apartments;
+        return "\n\n" + "ApartmentBuilding: \n"+
+                "," + address + "\n"+
+                ", civicAddress= '" + civicAddress + "\n" +
+                ", apartments= " + printHashmap(apartments) + "\n\n";
+    }
+    private String printHashmap(HashMap<Integer, PropertyDetails> apartments){
+        String result = "";
+        for(PropertyDetails apartment: apartments.values()){
+            result = result + apartment.toString();
+        }
+        return result;
     }
 
     @Override
@@ -84,6 +91,7 @@ public class ApartmentBuilding extends Property implements PropertyDisplay {
 
     @Override
     public boolean displayProperty() {
+        System.out.println("\n");
         System.out.println("---------------------------------------------------------------------------------");
         System.out.println("Address: " + address.getCity() + ", " + address.getProvince() + ", " + address.getPostalCode()
                 + ", " + getCivicAddress() + ", ");
@@ -95,9 +103,11 @@ public class ApartmentBuilding extends Property implements PropertyDisplay {
             System.out.println("Number of Bathrooms: " + apartments.get(apartmentNumber).getNumberOfBathRooms());
         }
         System.out.println("---------------------------------------------------------------------------------");
+        System.out.println("\n");
         return false;
     }
     public boolean displayVacantProperty() {
+        System.out.println("\n");
         System.out.println("---------------------------------------------------------------------------------");
         System.out.println("Address: " + address.getCity() + ", " + address.getProvince() + ", " + address.getPostalCode()
                 + ", " + getCivicAddress() + ", ");
@@ -113,9 +123,11 @@ public class ApartmentBuilding extends Property implements PropertyDisplay {
 
         }
         System.out.println("---------------------------------------------------------------------------------");
+        System.out.println("\n");
         return false;
     }
     public boolean displayRentedProperty() {
+        System.out.println("\n");
         System.out.println("---------------------------------------------------------------------------------");
         System.out.println("Address: " + address.getCity() + ", " + address.getProvince() + ", " + address.getPostalCode()
                 + ", " + getCivicAddress() + ", ");
@@ -131,6 +143,7 @@ public class ApartmentBuilding extends Property implements PropertyDisplay {
 
         }
         System.out.println("---------------------------------------------------------------------------------");
+        System.out.println("\n");
         return false;
     }
 }
